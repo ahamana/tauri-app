@@ -31,9 +31,17 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ],
+    "resources": [
+      "third-party"
+    ],
+    "externalBin": [
+      "binaries/ffmpeg"
+    ],
     "windows": {
       "nsis": {
-        "languages": ["Japanese"]
+        "languages": [
+          "Japanese"
+        ]
       },
       "wix": {
         "language": "ja-JP"

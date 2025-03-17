@@ -56,8 +56,9 @@ jobs:
         run: |
           ConvertFrom-Json '${{ steps.build.outputs.artifactPaths }}' | ForEach-Object {
               if ((Split-Path -Path $_ -Leaf) -match '(.+)-setup\.exe') {
-                  $asset = "src-tauri/target/release/{0}.zip" -f $matches[1]
-                  Compress-Archive -Path 'src-tauri/target/release/*.exe' -DestinationPath $asset
+                  $releaseDir = Convert-Path src-tauri/target/release
+                  $asset = Join-Path $releaseDir "$($matches[1]).zip"
+                  Compress-Archive -Path (Join-Path $releaseDir *.exe), (Join-Path $releaseDir third-party) -DestinationPath $asset
                   echo "WINDOWS_PORTABLE_ASSET=$asset" >> $env:GITHUB_ENV
               }
           }
