@@ -1,0 +1,72 @@
+name: Build Application
+
+on:
+  push:
+    branches: main
+
+jobs:
+  build:
+    runs-on: ${{ matrix.platform }}
+    permissions:
+      contents: write
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: macos-latest
+            args: --target aarch64-apple-darwin
+          - platform: macos-latest
+            args: --target x86_64-apple-darwin
+          - platform: windows-latest
+            args:
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install pnpm and frontend dependencies
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: true
+
+      - name: Install Rust stable
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+
+      - name: Build application
+        id: build
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VITE_MODE: production
+        with:
+          tagName: v__VERSION__
+          releaseName: v__VERSION__
+          args: ${{ matrix.args }}
+
+      - name: Create Windows portable asset
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          ConvertFrom-Json '${{ steps.build.outputs.artifactPaths }}' | ForEach-Object {
+              if ((Split-Path -Path $_ -Leaf) -match '(.+)-setup\.exe') {
+                  $asset = "src-tauri/target/release/{0}.zip" -f $matches[1]
+                  Compress-Archive -Path 'src-tauri/target/release/*.exe' -DestinationPath $asset
+                  echo "WINDOWS_PORTABLE_ASSET=$asset" >> $env:GITHUB_ENV
+              }
+          }
+
+      - name: Upload Windows portable asset
+        if: runner.os == 'Windows'
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.build.outputs.appVersion }}
+          files: ${{ env.WINDOWS_PORTABLE_ASSET }}
