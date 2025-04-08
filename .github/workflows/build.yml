@@ -53,6 +53,7 @@ jobs:
         with:
           tagName: v__VERSION__
           releaseName: v__VERSION__
+          releaseBody: v__VERSION__ release
           args: ${{ matrix.args }}
 
       - name: Create Windows portable asset
