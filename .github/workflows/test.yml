@@ -29,7 +29,11 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y webkit2gtk-4.1 libxdo-dev libayatana-appindicator3-dev libasound2-dev
+          sudo apt-get install -y \
+            libasound2-dev \
+            libayatana-appindicator3-dev \
+            libxdo-dev \
+            webkit2gtk-4.1
 
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
