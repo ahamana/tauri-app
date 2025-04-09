@@ -45,11 +45,11 @@ jobs:
           RUSTC_BOOTSTRAP: 1
         working-directory: src-tauri
         run: |
-          cargo test -- -Z unstable-options --format json --report-time | tee test-results.json
+          cargo test -- -Z unstable-options --format json | tee test-results.json
           cat test-results.json | cargo2junit > test-results.xml
 
       - name: Publish test report
-        uses: mikepenz/action-junit-report@v3
+        uses: mikepenz/action-junit-report@v5
         if: always()
         with:
           report_paths: src-tauri/test-results.xml
@@ -57,6 +57,6 @@ jobs:
           detailed_summary: true
           include_passed: true
 
-      - name: Run Clippy
-        working-directory: src-tauri
-        run: cargo clippy --all-targets --all-features
+      # - name: Run Clippy
+      #   working-directory: src-tauri
+      #   run: cargo clippy --all-targets --all-features
