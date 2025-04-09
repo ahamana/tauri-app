@@ -2,9 +2,13 @@ name: Rust Tests
 
 on:
   push:
-    branches: main
+    branches:
+      - develop
+      - main
   pull_request:
-    branches: main
+    branches:
+      - develop
+      - main
 
 env:
   CARGO_TERM_COLOR: always
@@ -25,7 +29,7 @@ jobs:
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
-          sudo apt-get install -y webkit2gtk-4.1 libxdo-dev libayatana-appindicator3-dev
+          sudo apt-get install -y webkit2gtk-4.1 libxdo-dev libayatana-appindicator3-dev libasound2-dev
 
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
