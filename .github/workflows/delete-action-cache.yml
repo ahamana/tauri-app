@@ -1,0 +1,16 @@
+name: Delete Action Cache
+
+on:
+  workflow_dispatch:
+
+jobs:
+  delete-cache:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+
+    steps:
+      - name: Delete action cache
+        uses: toshimaru/delete-action-cache@v1
+        with:
+          limit: 2147483647
