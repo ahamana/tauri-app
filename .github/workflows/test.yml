@@ -31,7 +31,7 @@ jobs:
 
       - name: Run tests
         working-directory: src-tauri
-        run: cargo test --tests
+        run: cargo test
 
       - name: Run Clippy
         working-directory: src-tauri
