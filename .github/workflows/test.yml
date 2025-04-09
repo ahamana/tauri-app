@@ -15,6 +15,7 @@ jobs:
     permissions:
       contents: read
       checks: write
+      pull-requests: write
 
     steps:
       - name: Checkout repository
@@ -48,6 +49,7 @@ jobs:
         if: always()
         with:
           report_paths: src-tauri/test-results.xml
+          check_name: Test Report
           detailed_summary: true
           include_passed: true
 
