@@ -41,6 +41,8 @@ jobs:
 
       - name: Configure Rust cache
         uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
 
       - name: Run Clippy
         uses: giraffate/clippy-action@v1
