@@ -56,10 +56,10 @@ jobs:
         run: cargo test -- -Z unstable-options --format json | cargo2junit > test-results.xml
 
       - name: Publish test report
-        uses: mikepenz/action-junit-report@v5
+        uses: dorny/test-reporter@v2
         if: always()
         with:
-          report_paths: src-tauri/test-results.xml
-          check_name: Test Report
-          detailed_summary: true
-          include_passed: true
+          name: Rust Test
+          path: test-results.xml
+          reporter: java-junit
+          working-directory: src-tauri
