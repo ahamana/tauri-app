@@ -33,11 +33,6 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Install Rust development tools
-        uses: taiki-e/install-action@v2
-        with:
-          tool: cargo2junit
-
       - name: Configure Rust cache
         uses: Swatinem/rust-cache@v2
         with:
@@ -53,13 +48,10 @@ jobs:
         env:
           RUSTC_BOOTSTRAP: 1
         working-directory: src-tauri
-        run: cargo test -- -Z unstable-options --format json | cargo2junit > test-results.xml
+        run: cargo test -- -Z unstable-options --format json | tee test-results.json
 
       - name: Publish test report
-        uses: dorny/test-reporter@v2
+        uses: ctrf-io/github-test-reporter@v1
         if: always()
         with:
-          name: Rust Test
-          path: test-results.xml
-          reporter: java-junit
-          working-directory: src-tauri
+          report-path: src-tauri/test-results.json
