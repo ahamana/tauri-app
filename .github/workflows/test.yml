@@ -6,16 +6,41 @@ on:
   pull_request:
     branches: main
 
-env:
-  CARGO_TERM_COLOR: always
+permissions:
+  contents: read
+  checks: write
 
 jobs:
-  test:
+  webview-test:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      checks: write
-      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+
+      - name: Install pnpm and frontend dependencies
+        uses: pnpm/action-setup@v4
+        with:
+          run_install: true
+
+      # - name: Run tests
+      #   run: pnpm test
+
+      # - name: Publish test report
+      #   uses: ctrf-io/github-test-reporter@v1
+      #   with:
+      #     report-path: ctrf/ctrf-report.json
+      #     title: WebView Test Report
+
+  rust-test:
+    runs-on: ubuntu-latest
+    env:
+      CARGO_TERM_COLOR: always
 
     steps:
       - name: Checkout repository
@@ -30,16 +55,6 @@ jobs:
             libayatana-appindicator3-dev \
             libwebkit2gtk-4.1-dev
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: lts/*
-
-      - name: Install pnpm and frontend dependencies
-        uses: pnpm/action-setup@v4
-        with:
-          run_install: true
-
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
 
@@ -53,15 +68,6 @@ jobs:
         with:
           workspaces: src-tauri
 
-      # - name: Run WebView tests
-      #   run: pnpm test
-
-      # - name: Publish WebView test report
-      #   uses: ctrf-io/github-test-reporter@v1
-      #   with:
-      #     report-path: ctrf/ctrf-report.json
-      #     title: WebView Test Report
-
       - name: Run Clippy
         uses: giraffate/clippy-action@v1
         env:
@@ -70,24 +76,24 @@ jobs:
           workdir: src-tauri
           filter_mode: nofilter
 
-      - name: Run Rust tests
+      - name: Run tests
         env:
           CARGO_INCREMENTAL: 1
           RUSTC_BOOTSTRAP: 1
         working-directory: src-tauri
-        run: cargo test -- -Z unstable-options --format json | cargo2junit > rust-test-results.xml
+        run: cargo test -- -Z unstable-options --format json | cargo2junit > test-results.xml
 
-      - name: Publish Rust test report
+      - name: Publish test report
         uses: ctrf-io/github-test-reporter@v1
         with:
-          report-path: src-tauri/rust-test-results.xml
+          report-path: src-tauri/test-results.xml
           title: Rust Test Report
           integrations-config: |
             {
               "junit-to-ctrf": {
                 "enabled": true,
                 "options": {
-                  "output": "rust-test-results.json",
+                  "output": "test-results.json",
                   "useSuiteName": false
                 }
               }
