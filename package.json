@@ -17,11 +17,11 @@
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2.5.0",
-    "@types/react": "^18.3.18",
-    "@types/react-dom": "^18.3.5",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
     "@vitejs/plugin-react": "^4.4.0",
     "typescript": "~5.8.3",
-    "vite": "^6.3.1"
+    "vite": "^6.3.2"
   },
   "packageManager": "pnpm@10.8.1",
   "pnpm": {
