@@ -39,6 +39,9 @@ jobs:
 
   rust-test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src-tauri
     env:
       CARGO_TERM_COLOR: always
 
@@ -73,14 +76,12 @@ jobs:
         env:
           CARGO_INCREMENTAL: 1
         with:
-          workdir: src-tauri
           filter_mode: nofilter
 
       - name: Run tests
         env:
           CARGO_INCREMENTAL: 1
           RUSTC_BOOTSTRAP: 1
-        working-directory: src-tauri
         run: cargo test -- -Z unstable-options --format json | cargo2junit > test-results.xml
 
       - name: Publish test report
