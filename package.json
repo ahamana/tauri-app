@@ -19,11 +19,11 @@
     "@tauri-apps/cli": "^2.5.0",
     "@types/react": "^18.3.20",
     "@types/react-dom": "^18.3.6",
-    "@vitejs/plugin-react": "^4.4.0",
+    "@vitejs/plugin-react": "^4.4.1",
     "typescript": "~5.8.3",
     "vite": "^6.3.2"
   },
-  "packageManager": "pnpm@10.8.1",
+  "packageManager": "pnpm@10.9.0",
   "pnpm": {
     "onlyBuiltDependencies": [
       "esbuild"
