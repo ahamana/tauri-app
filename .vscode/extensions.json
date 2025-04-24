@@ -1,6 +1,6 @@
 {
   "recommendations": [
-    "mrmlnc.vscode-json5",
+    "blueglassblock.better-json5",
     "rust-lang.rust-analyzer",
     "tauri-apps.tauri-vscode"
   ]
