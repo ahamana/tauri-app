@@ -5,7 +5,8 @@ import { includeIgnoreFile } from "@eslint/compat";
 import eslint from "@eslint/js";
 import { defineConfig, globalIgnores } from "eslint/config";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
-import eslintPluginImport from "eslint-plugin-import";
+import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
+import eslintPluginImportX from "eslint-plugin-import-x";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
 import globals from "globals";
@@ -40,7 +41,7 @@ export default defineConfig([
   },
   {
     files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,mts,cts,tsx,mtsx}"],
-    extends: [eslintPluginImport.flatConfigs.recommended],
+    extends: [eslintPluginImportX.flatConfigs.recommended],
     plugins: {
       "unused-imports": eslintPluginUnusedImports,
     },
@@ -49,14 +50,14 @@ export default defineConfig([
       parser: tseslint.parser,
     },
     settings: {
-      "import/resolver": {
-        typescript: {
+      "import-x/resolver-next": [
+        createTypeScriptImportResolver({
           alwaysTryTypes: true,
-        },
-      },
+        }),
+      ],
     },
     rules: {
-      "import/order": [
+      "import-x/order": [
         "warn",
         {
           "newlines-between": "always",
