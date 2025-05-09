@@ -54,11 +54,9 @@ export default tseslint.config([
       parser: tseslint.parser,
     },
     settings: {
-      "import-x/resolver-next": [
-        createTypeScriptImportResolver({
-          alwaysTryTypes: true,
-        }),
-      ],
+      "import-x/resolver-next": createTypeScriptImportResolver({
+        alwaysTryTypes: true,
+      }),
     },
     rules: {
       "import-x/order": [
