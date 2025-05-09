@@ -3,7 +3,7 @@ import { fileURLToPath } from "url";
 
 import { includeIgnoreFile } from "@eslint/compat";
 import eslint from "@eslint/js";
-import { defineConfig, globalIgnores } from "eslint/config";
+import { globalIgnores } from "eslint/config";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import eslintPluginImportX from "eslint-plugin-import-x";
@@ -16,9 +16,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const gitignorePath = resolve(__dirname, ".gitignore");
 
-export default defineConfig([
+export default tseslint.config([
   includeIgnoreFile(gitignorePath),
-  globalIgnores(["src-tauri/**"]),
+  globalIgnores(["src-tauri/"]),
   {
     files: ["**/*.{js,mjs,cjs,jsx,mjsx}"],
     extends: [eslint.configs.recommended],
@@ -67,7 +67,17 @@ export default defineConfig([
           },
         },
       ],
+      "@typescript-eslint/no-unused-vars": "off",
       "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          vars: "all",
+          varsIgnorePattern: "^_",
+          args: "after-used",
+          argsIgnorePattern: "^_",
+        },
+      ],
     },
   },
   eslintConfigPrettier,
