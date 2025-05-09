@@ -8,6 +8,7 @@ import eslintConfigPrettier from "eslint-config-prettier/flat";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import eslintPluginImportX from "eslint-plugin-import-x";
 import eslintPluginReact from "eslint-plugin-react";
+import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -29,7 +30,10 @@ export default tseslint.config([
   },
   {
     files: ["**/*.{js,mjs,jsx,mjsx,ts,tsx,mtsx}"],
-    extends: [eslintPluginReact.configs.flat.recommended],
+    extends: [
+      eslintPluginReact.configs.flat.recommended,
+      eslintPluginReactHooks.configs["recommended-latest"],
+    ],
     settings: {
       react: {
         version: "detect",
