@@ -10,7 +10,6 @@ import eslintPluginImportX from "eslint-plugin-import-x";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
-import globals from "globals";
 import tseslint from "typescript-eslint";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -50,7 +49,6 @@ export default tseslint.config([
       "unused-imports": eslintPluginUnusedImports,
     },
     languageOptions: {
-      globals: globals.node,
       parser: tseslint.parser,
     },
     settings: {
