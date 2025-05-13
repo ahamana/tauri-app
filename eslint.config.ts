@@ -3,13 +3,13 @@ import { fileURLToPath } from "url";
 
 import { includeIgnoreFile } from "@eslint/compat";
 import eslint from "@eslint/js";
-import { globalIgnores } from "eslint/config";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
 import eslintPluginImportX from "eslint-plugin-import-x";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
+import { globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -26,6 +26,9 @@ export default tseslint.config([
   {
     files: ["**/*.{ts,mts,cts,tsx,mtsx}"],
     extends: [eslint.configs.recommended, tseslint.configs.recommended],
+    rules: {
+      "@typescript-eslint/consistent-type-imports": "error",
+    },
   },
   {
     files: ["**/*.{js,mjs,jsx,mjsx,ts,tsx,mtsx}"],
@@ -61,14 +64,9 @@ export default tseslint.config([
         "warn",
         {
           "newlines-between": "always",
-          alphabetize: {
-            order: "asc",
-            caseInsensitive: true,
-          },
         },
       ],
       "@typescript-eslint/no-unused-vars": "off",
-      "unused-imports/no-unused-imports": "error",
       "unused-imports/no-unused-vars": [
         "warn",
         {
