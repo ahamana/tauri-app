@@ -27,12 +27,8 @@ export default tseslint.config([
     files: ["**/*.{ts,mts,cts,tsx,mtsx}"],
     extends: [eslint.configs.recommended, tseslint.configs.recommended],
     rules: {
-      "@typescript-eslint/consistent-type-imports": [
-        "error",
-        {
-          fixStyle: "inline-type-imports",
-        },
-      ],
+      "@typescript-eslint/consistent-type-imports": "error",
+      "import-x/consistent-type-specifier-style": ["warn", "prefer-inline"],
     },
   },
   {
