@@ -28,7 +28,7 @@ export default tseslint.config([
     extends: [eslint.configs.recommended, tseslint.configs.recommended],
     rules: {
       "@typescript-eslint/consistent-type-imports": "error",
-      "import-x/consistent-type-specifier-style": ["warn", "prefer-inline"],
+      "import-x/consistent-type-specifier-style": "warn",
     },
   },
   {
