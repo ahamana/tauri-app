@@ -1,5 +1,4 @@
-import { dirname, resolve } from "path";
-import { fileURLToPath } from "url";
+import { resolve } from "path";
 
 import { includeIgnoreFile } from "@eslint/compat";
 import eslint from "@eslint/js";
@@ -12,9 +11,7 @@ import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
 import { globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const gitignorePath = resolve(__dirname, ".gitignore");
+const gitignorePath = resolve(import.meta.dirname, ".gitignore");
 
 export default tseslint.config([
   includeIgnoreFile(gitignorePath),
