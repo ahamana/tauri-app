@@ -2,7 +2,8 @@ name: Build Application
 
 on:
   push:
-    branches: main
+    branches:
+      - main
 
 jobs:
   build:
@@ -18,7 +19,7 @@ jobs:
           - platform: macos-latest
             args: --target x86_64-apple-darwin
           - platform: windows-latest
-            args:
+            args: ""
 
     steps:
       - name: Checkout repository
