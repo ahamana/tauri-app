@@ -32,15 +32,13 @@ export default tseslint.config([
     files: ["**/*.{js,mjs,jsx,mjsx,ts,tsx,mtsx}"],
     extends: [
       eslintPluginReact.configs.flat.recommended,
+      eslintPluginReact.configs.flat["jsx-runtime"],
       eslintPluginReactHooks.configs["recommended-latest"],
     ],
     settings: {
       react: {
         version: "detect",
       },
-    },
-    rules: {
-      "react/react-in-jsx-scope": "off",
     },
   },
   {
