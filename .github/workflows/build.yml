@@ -62,9 +62,9 @@ jobs:
         shell: pwsh
         run: |
           ConvertFrom-Json '${{ steps.build.outputs.artifactPaths }}' | ForEach-Object {
-              if ((Split-Path -Path $_ -Leaf) -match '(.+)-setup\.exe') {
-                  $asset = Join-Path (Get-Location) "$($matches[1]).zip"
-                  Compress-Archive -Path *.exe, third-party -DestinationPath $asset
+              if ((Split-Path $_ -Leaf) -match '(.+)-setup\.exe') {
+                  $asset = Join-Path $PWD "$($matches[1]).zip"
+                  Compress-Archive *.exe, third-party -DestinationPath $asset
                   echo "WINDOWS_PORTABLE_ASSET=$asset" >> $env:GITHUB_ENV
               }
           }

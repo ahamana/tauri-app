@@ -24,9 +24,9 @@ tasks:
       - cmd: |
           powershell -Command '
             Set-Location src-tauri/target/release
-            Get-ChildItem -Path bundle/nsis | ForEach-Object {
+            Get-ChildItem bundle/nsis | ForEach-Object {
                 if ($_ -match "(.+)-setup\.exe") {
-                    Compress-Archive -Path *.exe, third-party -DestinationPath "$($matches[1]).zip"
+                    Compress-Archive *.exe, third-party -DestinationPath "$($matches[1]).zip"
                 }
             }
           '
@@ -43,8 +43,8 @@ tasks:
       - cmd: git switch main
       - cmd: |
           powershell -Command '
-            $assets = Get-ChildItem -Path target/release/bundle -Filter *_{{.VERSION}}_* -Recurse | ForEach-Object { "`"$($_.FullName)`"" }
-            $assets += Get-ChildItem -Path target/release -Filter *_{{.VERSION}}_* | ForEach-Object { "`"$($_.FullName)`"" }
+            $assets = Get-ChildItem target/release/bundle *_{{.VERSION}}_* -Recurse | ForEach-Object { "`"$($_.FullName)`"" }
+            $assets += Get-ChildItem target/release *_{{.VERSION}}_* | ForEach-Object { "`"$($_.FullName)`"" }
             Invoke-Expression "gh release upload v{{.VERSION}} $assets --clobber"
           '
       - cmd: git switch -
