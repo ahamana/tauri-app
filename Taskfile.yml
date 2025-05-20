@@ -43,8 +43,8 @@ tasks:
       - cmd: git switch main
       - cmd: |
           powershell -Command '
-            $assets = Get-ChildItem -Path target/release/bundle -Filter *_{{.VERSION}}_* -Recurse | Select-Object -ExpandProperty FullName
-            $assets += Get-ChildItem -Path target/release -Filter *_{{.VERSION}}_* | Select-Object -ExpandProperty FullName
+            $assets = Get-ChildItem -Path target/release/bundle -Filter *_{{.VERSION}}_* -Recurse | ForEach-Object { "`"$($_.FullName)`"" }
+            $assets += Get-ChildItem -Path target/release -Filter *_{{.VERSION}}_* | ForEach-Object { "`"$($_.FullName)`"" }
             Invoke-Expression "gh release upload v{{.VERSION}} $assets --clobber"
           '
       - cmd: git switch -
