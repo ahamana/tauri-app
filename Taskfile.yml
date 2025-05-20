@@ -26,7 +26,7 @@ tasks:
             Set-Location src-tauri/target/release
             Get-ChildItem bundle/nsis | ForEach-Object {
                 if ($_ -match "(.+)-setup\.exe") {
-                    Compress-Archive *.exe, third-party -DestinationPath "$($matches[1]).zip"
+                    Compress-Archive *.exe,third-party "$($Matches[1]).zip"
                 }
             }
           '
