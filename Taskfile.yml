@@ -1,0 +1,54 @@
+version: 3
+
+tasks:
+  default:
+    cmd: task -l
+    silent: true
+
+  build:clean:
+    desc: ビルド成果物を削除する
+    dir: src-tauri
+    cmd: cargo clean
+    silent: true
+
+  build:release:
+    desc: リリースビルドを実行する
+    env:
+      VITE_MODE: production
+    deps: [build:clean]
+    cmds:
+      - cmd: git switch main
+      - cmd: git pull
+      - cmd: pnpm install --frozen-lockfile
+      - cmd: pnpm run tauri build
+      - cmd: |
+          powershell -Command '
+            Set-Location src-tauri/target/release
+            Get-ChildItem -Path bundle/nsis | ForEach-Object {
+                if ($_ -match "(.+)-setup\.exe") {
+                    Compress-Archive -Path *.exe, third-party -DestinationPath "$($matches[1]).zip"
+                }
+            }
+          '
+        platforms: [windows]
+      - cmd: git switch -
+    silent: true
+
+  build:publish:
+    desc: リリースビルドの成果物を公開する
+    deps: [build:release]
+    platforms: [windows]
+    dir: src-tauri
+    cmds:
+      - cmd: git switch main
+      - cmd: |
+          powershell -Command '
+            $assets = Get-ChildItem -Path target/release/bundle -Filter *_{{.VERSION}}_* -Recurse | Select-Object -ExpandProperty FullName
+            $assets += Get-ChildItem -Path target/release -Filter *_{{.VERSION}}_* | Select-Object -ExpandProperty FullName
+            Invoke-Expression "gh release upload v{{.VERSION}} $assets --clobber"
+          '
+      - cmd: git switch -
+    vars:
+      VERSION:
+        sh: cargo metadata --format-version=1 --no-deps | jq -r ".packages[0].version"
+    silent: true
