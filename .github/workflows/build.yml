@@ -51,6 +51,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VITE_MODE: production
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
           tagName: v__VERSION__
           releaseName: v__VERSION__
@@ -62,7 +64,7 @@ jobs:
         shell: pwsh
         run: |
           ConvertFrom-Json '${{ steps.build.outputs.artifactPaths }}' | ForEach-Object {
-              if ((Split-Path $_ -Leaf) -match '(.+)-setup\.exe') {
+              if ((Split-Path $_ -Leaf) -match '(.+)-setup\.exe$') {
                   $asset = Join-Path $PWD "$($Matches[1]).zip"
                   Compress-Archive *.exe,third-party $asset
                   echo "WINDOWS_PORTABLE_ASSET=$asset" >> $env:GITHUB_ENV
