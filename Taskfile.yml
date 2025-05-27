@@ -15,22 +15,14 @@ tasks:
     desc: リリースビルドを実行する
     env:
       VITE_MODE: production
+      TAURI_SIGNING_PRIVATE_KEY: "{{.ROOT_DIR}}/.tauri/updater.key"
+      TAURI_SIGNING_PRIVATE_KEY_PASSWORD:
     deps: [build:clean]
     cmds:
       - cmd: git switch main
       - cmd: git pull
       - cmd: pnpm install --frozen-lockfile
       - cmd: pnpm run tauri build
-      - cmd: |
-          powershell -Command '
-            Set-Location src-tauri/target/release
-            Get-ChildItem bundle/nsis | ForEach-Object {
-                if ($_ -match "(.+)-setup\.exe") {
-                    Compress-Archive *.exe,third-party "$($Matches[1]).zip"
-                }
-            }
-          '
-        platforms: [windows]
       - cmd: git switch -
     silent: true
 
@@ -44,11 +36,12 @@ tasks:
       - cmd: |
           powershell -Command '
             $assets = Get-ChildItem target/release/bundle *_{{.VERSION}}_* -Recurse | ForEach-Object { "`"$($_.FullName)`"" }
-            $assets += Get-ChildItem target/release *_{{.VERSION}}_* | ForEach-Object { "`"$($_.FullName)`"" }
-            Invoke-Expression "gh release upload v{{.VERSION}} $assets --clobber"
+            Invoke-Expression "gh release upload v{{.VERSION}} $assets --clobber -R {{.OWNER}}/tauri-app-release"
           '
       - cmd: git switch -
     vars:
       VERSION:
         sh: cargo metadata --format-version=1 --no-deps | jq -r ".packages[0].version"
+      OWNER:
+        sh: gh repo view --json owner --jq ".owner.login"
     silent: true
