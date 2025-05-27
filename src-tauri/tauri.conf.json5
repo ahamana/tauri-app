@@ -46,7 +46,7 @@
   plugins: {
     updater: {
       endpoints: [
-        "https://github.com/ahamana/tauri-app/releases/latest/download/latest.json",
+        "https://github.com/ahamana/tauri-app-release/releases/latest/download/latest.json",
       ],
       pubkey: "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEVGN0IxQTJENEY1RTUzNDIKUldSQ1UxNVBMUnA3N3hzZ2NhQ3BkVmlOSXFPeXRhZlZoczBDRHYvejNOOVh2VlF5N0RhbExyYXEK",
     },

@@ -1,4 +1,4 @@
-name: Build Application
+name: Release Application
 
 on:
   push:
@@ -45,11 +45,11 @@ jobs:
         with:
           cmake-version: 3.x
 
-      - name: Build application
+      - name: Build and release application
         id: build
         uses: tauri-apps/tauri-action@v0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           VITE_MODE: production
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
@@ -58,6 +58,9 @@ jobs:
           releaseName: v__VERSION__
           releaseBody: v__VERSION__ release
           args: ${{ matrix.args }}
+          owner: ${{ github.repository_owner }}
+          repo: tauri-app-release
+          releaseCommitish: main
 
       - name: Create Windows portable asset
         if: runner.os == 'Windows'
@@ -72,11 +75,17 @@ jobs:
           }
         working-directory: src-tauri/target/release
 
-      - name: Upload Windows portable asset
+      - name: Release Windows portable asset
         if: runner.os == 'Windows'
         uses: softprops/action-gh-release@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
           files: ${{ env.WINDOWS_PORTABLE_ASSET }}
+          repository: ${{ github.repository_owner }}/tauri-app-release
+          token: ${{ secrets.DEPLOY_TOKEN }}
+
+      - name: Create tag
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.build.outputs.appVersion }}
+          body: v${{ steps.build.outputs.appVersion }} release
