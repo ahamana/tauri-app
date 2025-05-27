@@ -45,6 +45,15 @@ jobs:
         with:
           cmake-version: 3.x
 
+      - name: Create tag
+        uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+        with:
+          includeRelease: false
+          tagName: v__VERSION__
+          releaseName: v__VERSION__
+
       - name: Build application
         id: build
         uses: tauri-apps/tauri-action@v0
@@ -78,8 +87,8 @@ jobs:
       - name: Upload Windows portable asset
         if: runner.os == 'Windows'
         uses: softprops/action-gh-release@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
           files: ${{ env.WINDOWS_PORTABLE_ASSET }}
+          repository: ${{ github.repository_owner }}/tauri-app-release
+          token: ${{ secrets.DEPLOY_TOKEN }}
