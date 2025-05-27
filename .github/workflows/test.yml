@@ -25,13 +25,13 @@ jobs:
         with:
           node-version-file: package.json
 
-      - name: Install pnpm and frontend dependencies
+      - name: Set up pnpm and install frontend dependencies
         uses: pnpm/action-setup@v4
         with:
           run_install: true
 
       # - name: Run tests
-      #   run: pnpm test
+      #   run: pnpm run test
 
       # - name: Publish test report
       #   uses: ctrf-io/github-test-reporter@v1
