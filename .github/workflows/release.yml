@@ -57,6 +57,7 @@ jobs:
           tagName: v__VERSION__
           releaseName: v__VERSION__
           releaseBody: v__VERSION__ release
+          releaseDraft: true
           args: ${{ matrix.args }}
           owner: ${{ github.repository_owner }}
           repo: tauri-app-release
