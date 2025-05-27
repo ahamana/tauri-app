@@ -88,4 +88,4 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
-          body: ""
+          body: v${{ steps.build.outputs.appVersion }} release
