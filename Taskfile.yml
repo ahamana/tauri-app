@@ -35,8 +35,20 @@ tasks:
       - cmd: git switch main
       - cmd: |
           powershell -Command '
-            $assets = Get-ChildItem target/release/bundle *_{{.VERSION}}_* -Recurse | ForEach-Object { "`"$($_.FullName)`"" }
-            Invoke-Expression "gh release upload v{{.VERSION}} $assets --clobber -R {{.OWNER}}/tauri-app-release"
+            Set-Location target/release
+            $assets = Get-ChildItem bundle "*_{{.VERSION}}_*" -Recurse | Select-Object -ExpandProperty FullName
+            $signatureFile = $assets | Where-Object { $_ -like "*_{{.VERSION}}_*.msi.sig" }
+            $signature = (Get-Content $signatureFile -Raw).Trim()
+            Invoke-Expression "gh release download v{{.VERSION}} -p latest.json -R {{.REPOSITORY}}"
+            $jsonFile = Convert-Path latest.json
+            $json = Get-Content $jsonFile -Raw | ConvertFrom-Json
+            $json.platforms."windows-x86_64".signature = $signature
+            ConvertTo-Json $json -Depth 100 | Set-Content $jsonFile
+            Invoke-Expression "pnpm dlx prettier --write $jsonFile"
+            $assets += $jsonFile 
+            $assets = $assets | ForEach-Object { "`"$_`"" }
+            Invoke-Expression "gh release upload v{{.VERSION}} $assets --clobber -R {{.REPOSITORY}}"
+            Invoke-Expression "gh release edit v{{.VERSION}} --draft=false --latest -R {{.REPOSITORY}}"
           '
       - cmd: git switch -
     vars:
@@ -44,4 +56,5 @@ tasks:
         sh: cargo metadata --format-version=1 --no-deps | jq -r ".packages[0].version"
       OWNER:
         sh: gh repo view --json owner --jq ".owner.login"
+      REPOSITORY: "{{.OWNER}}/tauri-app-release"
     silent: true
