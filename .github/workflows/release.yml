@@ -51,7 +51,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           VITE_MODE: production
-          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ github.workspace }}/.tauri/updater.key
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
           tagName: v__VERSION__
