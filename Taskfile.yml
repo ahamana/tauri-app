@@ -17,7 +17,8 @@ tasks:
       VITE_MODE: production
       TAURI_SIGNING_PRIVATE_KEY: "{{.ROOT_DIR}}/.tauri/updater.key"
       TAURI_SIGNING_PRIVATE_KEY_PASSWORD:
-    deps: [build:clean]
+    deps:
+      - build:clean
     cmds:
       - cmd: git switch main
       - cmd: git pull
@@ -28,8 +29,10 @@ tasks:
 
   build:publish:
     desc: リリースビルドの成果物を公開する
-    deps: [build:release]
-    platforms: [windows]
+    deps:
+      - build:release
+    platforms:
+      - windows
     dir: src-tauri
     cmds:
       - cmd: git switch main
