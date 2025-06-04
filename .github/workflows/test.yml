@@ -44,8 +44,6 @@ jobs:
     defaults:
       run:
         working-directory: src-tauri
-    env:
-      CARGO_TERM_COLOR: always
 
     steps:
       - name: Checkout repository
