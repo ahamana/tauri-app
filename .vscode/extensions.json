@@ -4,6 +4,7 @@
     "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
+    "redhat.vscode-yaml",
     "rust-lang.rust-analyzer",
     "tauri-apps.tauri-vscode"
   ]
