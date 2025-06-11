@@ -47,9 +47,9 @@ tasks:
           powershell -Command '
             Set-Location target/release
             $assets = Get-ChildItem bundle "*_{{.VERSION}}_*" -Recurse | Select-Object -ExpandProperty FullName
-            $signatureFile = $assets | Where-Object { $_ -like "*_{{.VERSION}}_*.msi.sig" }
+            $signatureFile = $assets | Where-Object { $_ -Like "*_{{.VERSION}}_*.msi.sig" }
             $signature = (Get-Content $signatureFile -Raw).Trim()
-            Invoke-Expression "gh release download {{.TAG}} -p latest.json -R {{.REPOSITORY}}"
+            Invoke-Expression "gh release download {{.TAG}} -p latest.json --clobber -R {{.REPOSITORY}}"
             $jsonFile = Convert-Path latest.json
             $json = Get-Content $jsonFile -Raw | ConvertFrom-Json
             $json.platforms."windows-x86_64".signature = $signature
