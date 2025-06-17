@@ -30,4 +30,4 @@ serde_json = "1.0.140"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 tauri-plugin-process = "2.2.2"
-tauri-plugin-updater = "2.8.0"
+tauri-plugin-updater = "2.8.1"
