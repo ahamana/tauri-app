@@ -53,6 +53,7 @@ jobs:
           VITE_MODE: production
           TAURI_SIGNING_PRIVATE_KEY: ${{ github.workspace }}/.tauri/updater.key
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
+          # TAURI_BUNDLER_DMG_IGNORE_CI: false
         with:
           tagName: v__VERSION__
           releaseName: v__VERSION__
