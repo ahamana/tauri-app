@@ -43,10 +43,10 @@ export default tseslint.config(
   },
   {
     files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,mts,cts,tsx,mtsx}"],
+    extends: [eslintPluginImportX.flatConfigs.recommended],
     plugins: {
       "unused-imports": eslintPluginUnusedImports,
     },
-    extends: [eslintPluginImportX.flatConfigs.recommended],
     languageOptions: {
       parser: tseslint.parser,
     },
