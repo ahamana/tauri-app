@@ -14,9 +14,9 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - platform: macos-latest
+          - platform: macos-15
             args: --target aarch64-apple-darwin
-          - platform: macos-latest
+          - platform: macos-15
             args: --target x86_64-apple-darwin
           - platform: windows-latest
             args: ""
@@ -38,7 +38,7 @@ jobs:
       - name: Install Rust stable
         uses: dtolnay/rust-toolchain@stable
         with:
-          targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
+          targets: ${{ matrix.platform == 'macos-15' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
       - name: Set up CMake
         uses: jwlawson/actions-setup-cmake@v2
@@ -53,7 +53,6 @@ jobs:
           VITE_MODE: production
           TAURI_SIGNING_PRIVATE_KEY: ${{ github.workspace }}/.tauri/updater.key
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
-          # TAURI_BUNDLER_DMG_IGNORE_CI: false
         with:
           tagName: v__VERSION__
           releaseName: v__VERSION__
