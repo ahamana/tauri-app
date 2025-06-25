@@ -20,9 +20,9 @@ tauri-build = { version = "2.3.0", features = ["config-json5"] }
 [dependencies]
 tauri = { version = "2.6.0", features = ["config-json5"] }
 tauri-plugin = "2.3.0"
-tauri-plugin-dialog = "2.2.2"
-tauri-plugin-log = "2.5.1"
-tauri-plugin-opener = "2.3.1"
+tauri-plugin-dialog = "2.3.0"
+tauri-plugin-log = "2.6.0"
+tauri-plugin-opener = "2.4.0"
 aec-rs = "1.0.0"
 log = "0.4.27"
 samplerate = "0.2.4"
@@ -30,5 +30,5 @@ serde = { version = "1.0.219", features = ["derive"] }
 serde_json = "1.0.140"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
-tauri-plugin-process = "2.2.2"
-tauri-plugin-updater = "2.8.1"
+tauri-plugin-process = "2.3.0"
+tauri-plugin-updater = "2.9.0"
