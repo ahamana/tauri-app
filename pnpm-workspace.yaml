@@ -1,3 +1,5 @@
 onlyBuiltDependencies:
   - esbuild
+  - eslint-config-prettier
+  - napi-postinstall
   - unrs-resolver
