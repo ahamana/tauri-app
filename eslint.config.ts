@@ -8,12 +8,12 @@ import eslintPluginImportX from "eslint-plugin-import-x";
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
-import { globalIgnores } from "eslint/config";
+import { defineConfig, globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 const gitignorePath = resolve(import.meta.dirname, ".gitignore");
 
-export default tseslint.config(
+export default defineConfig(
   includeIgnoreFile(gitignorePath),
   globalIgnores(["src-tauri/"]),
   {
@@ -43,6 +43,8 @@ export default tseslint.config(
   },
   {
     files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,mts,cts,tsx,mtsx}"],
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
     extends: [eslintPluginImportX.flatConfigs.recommended],
     plugins: {
       "unused-imports": eslintPluginUnusedImports,
