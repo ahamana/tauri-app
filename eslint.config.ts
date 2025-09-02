@@ -1,4 +1,4 @@
-import { resolve } from "path";
+import { join } from "path";
 
 import { includeIgnoreFile } from "@eslint/compat";
 import eslint from "@eslint/js";
@@ -11,7 +11,7 @@ import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
 import { defineConfig, globalIgnores } from "eslint/config";
 import tseslint from "typescript-eslint";
 
-const gitignorePath = resolve(import.meta.dirname, ".gitignore");
+const gitignorePath = join(import.meta.dirname, ".gitignore");
 
 export default defineConfig(
   includeIgnoreFile(gitignorePath),
