@@ -49,9 +49,6 @@ export default defineConfig(
     plugins: {
       "unused-imports": eslintPluginUnusedImports,
     },
-    languageOptions: {
-      parser: tseslint.parser,
-    },
     settings: {
       "import-x/resolver-next": createTypeScriptImportResolver({
         alwaysTryTypes: true,
