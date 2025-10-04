@@ -8,6 +8,7 @@
     "redhat.vscode-yaml",
     "rust-lang.rust-analyzer",
     "streetsidesoftware.code-spell-checker",
-    "tauri-apps.tauri-vscode"
+    "tauri-apps.tauri-vscode",
+    "yoavbls.pretty-ts-errors"
   ]
 }
