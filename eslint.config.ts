@@ -33,9 +33,7 @@ export default defineConfig(
     extends: [
       eslintPluginReact.configs.flat.recommended,
       eslintPluginReact.configs.flat["jsx-runtime"],
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-expect-error
-      eslintPluginReactHooks.configs["recommended-latest"],
+      eslintPluginReactHooks.configs.flat["recommended-latest"],
     ],
     settings: {
       react: {
