@@ -24,7 +24,6 @@ jobs:
         uses: actions/setup-node@v6
         with:
           node-version-file: package.json
-          package-manager-cache: false
 
       - name: Set up pnpm and install frontend dependencies
         uses: pnpm/action-setup@v4
