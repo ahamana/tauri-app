@@ -22,7 +22,7 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.4.0",
+    "@eslint/compat": "^1.4.1",
     "@eslint/js": "^9.38.0",
     "@tauri-apps/cli": "^2.9.2",
     "@types/node": "^24.9.2",
