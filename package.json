@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.4",
   "type": "module",
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.24.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -46,6 +46,6 @@
     "vite": "^7.2.6"
   },
   "volta": {
-    "node": "24.11.0"
+    "node": "24.11.1"
   }
 }
