@@ -86,7 +86,7 @@ jobs:
           token: ${{ secrets.DEPLOY_TOKEN }}
 
       - name: Create tag
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v2.4.2
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
           body: v${{ steps.build.outputs.appVersion }} release
