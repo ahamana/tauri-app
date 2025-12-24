@@ -27,7 +27,7 @@ aec-rs = "1.0.0"
 log = "0.4.29"
 samplerate = "0.2.4"
 serde = { version = "1.0.228", features = ["derive"] }
-serde_json = "1.0.146"
+serde_json = "1.0.147"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 tauri-plugin-process = "2.3.1"
