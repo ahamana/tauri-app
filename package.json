@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.4",
   "type": "module",
-  "packageManager": "pnpm@10.28.2",
+  "packageManager": "pnpm@10.29.3",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -26,7 +26,7 @@
     "@eslint/js": "^9.39.2",
     "@tauri-apps/cli": "^2.10.0",
     "@types/node": "^25.2.3",
-    "@types/react": "^19.2.13",
+    "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^5.1.4",
     "eslint": "^9.39.2",
