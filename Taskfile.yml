@@ -6,13 +6,13 @@ tasks:
     silent: true
 
   build:clean:
-    desc: ビルド成果物を削除する
+    desc: Clean build artifacts
     dir: src-tauri
     cmd: cargo clean
     silent: true
 
   build:release:
-    desc: リリースビルドを実行する
+    desc: Perform release build
     deps:
       - build:clean
     env:
@@ -28,7 +28,7 @@ tasks:
     silent: true
 
   build:publish:
-    desc: リリースビルドの成果物を公開する
+    desc: Publish release build artifacts
     deps:
       - build:release
     platforms:
