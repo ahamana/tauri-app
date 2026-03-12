@@ -43,8 +43,6 @@ export default defineConfig(
   },
   {
     files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,mts,cts,tsx,mtsx}"],
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     extends: [eslintPluginImportX.flatConfigs.recommended],
     plugins: {
       "unused-imports": eslintPluginUnusedImports,
