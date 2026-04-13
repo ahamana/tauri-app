@@ -26,7 +26,7 @@ jobs:
           node-version-file: package.json
 
       - name: Set up pnpm and install frontend dependencies
-        uses: pnpm/action-setup@v5
+        uses: pnpm/action-setup@v6
         with:
           run_install: true
 
