@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.4",
   "type": "module",
-  "packageManager": "pnpm@11.0.5",
+  "packageManager": "pnpm@11.0.9",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -22,7 +22,7 @@
     "react-dom": "^19.2.6"
   },
   "devDependencies": {
-    "@eslint/compat": "^2.0.5",
+    "@eslint/compat": "^2.1.0",
     "@eslint/js": "^9.39.4",
     "@tauri-apps/cli": "^2.11.1",
     "@types/node": "^25.6.2",
@@ -38,7 +38,7 @@
     "eslint-plugin-unused-imports": "^4.4.1",
     "husky": "^9.1.7",
     "jiti": "^2.7.0",
-    "lint-staged": "^17.0.2",
+    "lint-staged": "^17.0.4",
     "prettier": "^3.8.3",
     "prettier-plugin-organize-imports": "^4.3.0",
     "typescript": "~6.0.3",
