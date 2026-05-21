@@ -1,4 +1,2 @@
 allowBuilds:
   unrs-resolver: true
-minimumReleaseAgeExclude:
-  - vite@8.0.14
