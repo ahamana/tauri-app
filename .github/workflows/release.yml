@@ -44,7 +44,7 @@ jobs:
 
       - name: Build and release application
         id: build
-        uses: tauri-apps/tauri-action@v0
+        uses: tauri-apps/tauri-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           VITE_MODE: production
