@@ -1,6 +1,6 @@
 import { join } from "path";
 
-import { includeIgnoreFile } from "@eslint/compat";
+import { includeIgnoreFile } from "@eslint/config-helpers";
 import eslint from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 import { createTypeScriptImportResolver } from "eslint-import-resolver-typescript";
@@ -48,9 +48,7 @@ export default defineConfig(
       "unused-imports": eslintPluginUnusedImports,
     },
     settings: {
-      "import-x/resolver-next": createTypeScriptImportResolver({
-        alwaysTryTypes: true,
-      }),
+      "import-x/resolver-next": createTypeScriptImportResolver(),
     },
     rules: {
       "import-x/order": [
