@@ -1,0 +1,37 @@
+name: npm audit
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 9 * * 1-5"
+      timezone: Asia/Tokyo
+
+jobs:
+  scan:
+    name: npm audit
+    runs-on: ubuntu-slim
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: package.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run npm audit
+        uses: oke-py/npm-audit-action@v5
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          dedupe_comments: true
+          dedupe_issues: true
+          report_format: markdown
