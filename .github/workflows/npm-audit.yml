@@ -29,7 +29,7 @@ jobs:
         run: npm install
 
       - name: Run npm audit
-        uses: oke-py/npm-audit-action@v5
+        uses: oke-py/npm-audit-action@v5.4.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dedupe_comments: true
