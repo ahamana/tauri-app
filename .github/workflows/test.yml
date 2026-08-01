@@ -19,17 +19,17 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v7.0.0
         with:
           node-version-file: package.json
 
       - name: Set up pnpm and install frontend dependencies
-        uses: pnpm/action-setup@v6
+        uses: pnpm/action-setup@v6.0.9
         with:
           run_install: true
 
@@ -51,7 +51,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
@@ -73,12 +73,12 @@ jobs:
           tool: cargo2junit
 
       - name: Configure Rust cache
-        uses: Swatinem/rust-cache@v2
+        uses: Swatinem/rust-cache@v2.9.1
         with:
           workspaces: src-tauri
 
       - name: Run Clippy
-        uses: giraffate/clippy-action@v1
+        uses: giraffate/clippy-action@v1.0.1
         env:
           CARGO_INCREMENTAL: 1
         with:
@@ -91,7 +91,7 @@ jobs:
         run: cargo test -- -Z unstable-options --format json | cargo2junit > test-results.xml
 
       - name: Publish test report
-        uses: ctrf-io/github-test-reporter@v1
+        uses: ctrf-io/github-test-reporter@v1.1.0
         with:
           report-path: src-tauri/test-results.xml
           title: Rust Test Report

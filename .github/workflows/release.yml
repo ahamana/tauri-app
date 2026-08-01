@@ -24,17 +24,17 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@v7
+        uses: actions/setup-node@v7.0.0
         with:
           node-version-file: package.json
 
       - name: Set up pnpm and install frontend dependencies
-        uses: pnpm/action-setup@v6
+        uses: pnpm/action-setup@v6.0.9
         with:
           run_install: true
 
@@ -45,7 +45,7 @@ jobs:
 
       - name: Build and release application
         id: build
-        uses: tauri-apps/tauri-action@v1
+        uses: tauri-apps/tauri-action@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           VITE_MODE: production
@@ -76,7 +76,7 @@ jobs:
 
       - name: Release Windows portable asset
         if: runner.os == 'Windows'
-        uses: softprops/action-gh-release@v3
+        uses: softprops/action-gh-release@v3.0.2
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
           files: ${{ env.WINDOWS_PORTABLE_ASSET }}
@@ -84,7 +84,7 @@ jobs:
           token: ${{ secrets.DEPLOY_TOKEN }}
 
       - name: Create tag
-        uses: softprops/action-gh-release@v3
+        uses: softprops/action-gh-release@v3.0.2
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
           body: v${{ steps.build.outputs.appVersion }} release
