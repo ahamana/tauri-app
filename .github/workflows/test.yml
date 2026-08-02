@@ -68,7 +68,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: Install Rust development tools
-        uses: taiki-e/install-action@v2.85.4
+        uses: taiki-e/install-action@v2.85.5
         with:
           tool: cargo2junit
 
