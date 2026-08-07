@@ -17,11 +17,11 @@ export default defineConfig(
   includeIgnoreFile(gitignorePath),
   globalIgnores(["src-tauri/"]),
   {
-    files: ["**/*.{js,mjs,cjs,jsx,mjsx}"],
+    files: ["**/*.{js,mjs,cjs,jsx}"],
     extends: [eslint.configs.recommended],
   },
   {
-    files: ["**/*.{ts,mts,cts,tsx,mtsx}"],
+    files: ["**/*.{ts,mts,cts,tsx}"],
     extends: [eslint.configs.recommended, tseslint.configs.recommended],
     rules: {
       "@typescript-eslint/consistent-type-imports": "error",
@@ -29,7 +29,7 @@ export default defineConfig(
     },
   },
   {
-    files: ["**/*.{js,mjs,jsx,mjsx,ts,tsx,mtsx}"],
+    files: ["**/*.{js,mjs,jsx,ts,tsx}"],
     extends: [
       eslintPluginReact.configs.flat.recommended,
       eslintPluginReact.configs.flat["jsx-runtime"],
@@ -42,7 +42,7 @@ export default defineConfig(
     },
   },
   {
-    files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,mts,cts,tsx,mtsx}"],
+    files: ["**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}"],
     extends: [eslintPluginImportX.flatConfigs.recommended],
     plugins: {
       "unused-imports": eslintPluginUnusedImports,
