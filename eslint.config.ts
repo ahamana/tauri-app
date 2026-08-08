@@ -17,11 +17,11 @@ export default defineConfig(
   includeIgnoreFile(gitignorePath),
   globalIgnores(["src-tauri/"]),
   {
-    files: ["**/*.{js,mjs,cjs,jsx}"],
+    files: ["**/*.{js,cjs,mjs,jsx}"],
     extends: [eslint.configs.recommended],
   },
   {
-    files: ["**/*.{ts,mts,cts,tsx}"],
+    files: ["**/*.{ts,cts,mts,tsx}"],
     extends: [eslint.configs.recommended, tseslint.configs.recommended],
     rules: {
       "@typescript-eslint/consistent-type-imports": "error",
@@ -29,26 +29,21 @@ export default defineConfig(
     },
   },
   {
-    files: ["**/*.{js,mjs,jsx,ts,tsx}"],
+    files: ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
     extends: [
+      eslintPluginImportX.flatConfigs.recommended,
       eslintPluginReact.configs.flat.recommended,
       eslintPluginReact.configs.flat["jsx-runtime"],
       eslintPluginReactHooks.configs.flat["recommended-latest"],
     ],
-    settings: {
-      react: {
-        version: "detect",
-      },
-    },
-  },
-  {
-    files: ["**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx}"],
-    extends: [eslintPluginImportX.flatConfigs.recommended],
     plugins: {
       "unused-imports": eslintPluginUnusedImports,
     },
     settings: {
       "import-x/resolver-next": createTypeScriptImportResolver(),
+      react: {
+        version: "detect",
+      },
     },
     rules: {
       "import-x/order": [
@@ -58,6 +53,7 @@ export default defineConfig(
         },
       ],
       "@typescript-eslint/no-unused-vars": "off",
+      "unused-imports/no-unused-imports": "warn",
       "unused-imports/no-unused-vars": [
         "warn",
         {
