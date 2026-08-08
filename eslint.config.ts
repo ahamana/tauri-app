@@ -14,7 +14,9 @@ import tseslint from "typescript-eslint";
 const gitignorePath = join(import.meta.dirname, ".gitignore");
 
 export default defineConfig(
-  includeIgnoreFile(gitignorePath),
+  includeIgnoreFile(gitignorePath, {
+    gitignoreResolution: true,
+  }),
   globalIgnores(["src-tauri/"]),
   {
     files: ["**/*.{js,cjs,mjs,jsx}"],
