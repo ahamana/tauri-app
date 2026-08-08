@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
     "skipLibCheck": true,
-    "types": ["node"],
 
     /* Bundler mode */
     "allowImportingTsExtensions": true,

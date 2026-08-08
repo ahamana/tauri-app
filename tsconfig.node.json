@@ -3,5 +3,10 @@
     "composite": true,
     "skipLibCheck": true
   },
-  "include": ["vite.config.ts"]
+  "include": [
+    "eslint.config.ts",
+    "lint-staged.config.ts",
+    "prettier.config.ts",
+    "vite.config.ts"
+  ]
 }
