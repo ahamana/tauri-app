@@ -99,10 +99,6 @@ jobs:
           integrations-config: |
             {
               "junit-to-ctrf": {
-                "enabled": true,
-                "options": {
-                  "output": "test-results.json",
-                  "useSuiteName": false
-                }
+                "enabled": true
               }
             }
