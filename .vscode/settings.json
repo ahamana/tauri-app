@@ -3,5 +3,8 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   }
 }
