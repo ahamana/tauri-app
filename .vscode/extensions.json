@@ -1,5 +1,6 @@
 {
   "recommendations": [
+    "bierner.markdown-preview-github-styles",
     "blueglassblock.better-json5",
     "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
