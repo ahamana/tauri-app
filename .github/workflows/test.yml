@@ -72,7 +72,7 @@ jobs:
       - name: Install Rust development tools
         uses: taiki-e/install-action@v2.85.8
         with:
-          tool: cargo2junit
+          tool: cargo-nextest
 
       - name: Configure Rust cache
         uses: Swatinem/rust-cache@v2.9.1
@@ -89,13 +89,12 @@ jobs:
       - name: Run tests
         env:
           CARGO_INCREMENTAL: 1
-          RUSTC_BOOTSTRAP: 1
-        run: cargo test -- -Z unstable-options --format json | cargo2junit > test-results.xml
+        run: cargo nextest run --profile ci
 
       - name: Publish test report
         uses: ctrf-io/github-test-reporter@v1.1.0
         with:
-          report-path: src-tauri/test-results.xml
+          report-path: src-tauri/target/nextest/ci/junit.xml
           title: Rust Test Report
           integrations-config: |
             {
