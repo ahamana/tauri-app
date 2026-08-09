@@ -45,6 +45,8 @@ jobs:
   rust-test:
     name: Rust Test
     runs-on: ubuntu-latest
+    env:
+      CARGO_TERM_COLOR: always
     defaults:
       run:
         working-directory: src-tauri
