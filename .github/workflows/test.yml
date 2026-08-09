@@ -64,8 +64,10 @@ jobs:
             libayatana-appindicator3-dev \
             libwebkit2gtk-4.1-dev
 
-      - name: Install Rust stable
-        uses: dtolnay/rust-toolchain@stable
+      - name: Set up Rust
+        uses: jdx/mise-action@v4.2.4
+        with:
+          install_args: rust
 
       - name: Install Rust development tools
         uses: taiki-e/install-action@v2.85.8

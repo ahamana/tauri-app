@@ -28,20 +28,15 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Set up Node.js
+      - name: Set up Node.js and Rust
         uses: jdx/mise-action@v4.2.4
         with:
-          install_args: node
+          install_args: node rust
 
       - name: Set up pnpm and install frontend dependencies
         uses: pnpm/action-setup@v6.0.10
         with:
           run_install: true
-
-      - name: Install Rust stable
-        uses: dtolnay/rust-toolchain@stable
-        with:
-          targets: ${{ runner.os == 'macOS' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
       - name: Build and release application
         id: build

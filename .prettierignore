@@ -1,3 +1,5 @@
+.prettierignore
 Cargo.lock
+mise.toml
 pnpm-lock.yaml
 pnpm-workspace.yaml
