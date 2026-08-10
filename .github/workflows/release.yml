@@ -36,6 +36,11 @@ jobs:
       - name: Set up pnpm and install frontend dependencies
         uses: pnpm/setup@v2.0.2
 
+      - name: Configure Rust cache
+        uses: Swatinem/rust-cache@v2.9.2
+        with:
+          workspaces: src-tauri
+
       - name: Build and release application
         id: build
         uses: tauri-apps/tauri-action@v1.0.0
