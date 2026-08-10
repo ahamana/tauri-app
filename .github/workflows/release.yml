@@ -18,6 +18,7 @@ jobs:
       matrix:
         platform:
           - macos-latest
+          - macos-26-intel
           - windows-latest
 
     steps:
