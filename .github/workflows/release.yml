@@ -34,9 +34,7 @@ jobs:
             rust
 
       - name: Set up pnpm and install frontend dependencies
-        uses: pnpm/action-setup@v6.0.10
-        with:
-          run_install: true
+        uses: pnpm/setup@v2.0.2
 
       - name: Build and release application
         id: build
