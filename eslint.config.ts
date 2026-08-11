@@ -19,11 +19,11 @@ export default defineConfig(
   }),
   globalIgnores(["src-tauri/"]),
   {
-    files: ["**/*.{js,cjs,mjs,jsx}"],
+    files: [tseslint.globs.js],
     extends: [eslint.configs.recommended],
   },
   {
-    files: ["**/*.{ts,cts,mts,tsx}"],
+    files: [tseslint.globs.ts],
     extends: [eslint.configs.recommended, tseslint.configs.recommended],
     rules: {
       "@typescript-eslint/consistent-type-imports": "error",
@@ -31,7 +31,7 @@ export default defineConfig(
     },
   },
   {
-    files: ["**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}"],
+    files: [tseslint.globs.jsts],
     extends: [
       eslintPluginImportX.flatConfigs.recommended,
       eslintPluginReact.configs.flat.recommended,
