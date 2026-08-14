@@ -54,7 +54,7 @@ tasks:
             $json = Get-Content $jsonFile -Raw | ConvertFrom-Json
             $json.platforms."windows-x86_64".signature = $signature
             ConvertTo-Json $json -Depth 100 | Set-Content $jsonFile
-            Invoke-Expression "pnpm dlx prettier --write $jsonFile"
+            Invoke-Expression "pnx prettier --write $jsonFile"
             $assets += $jsonFile 
             $assets = $assets | ForEach-Object { "`"$_`"" }
             Invoke-Expression "gh release upload {{.TAG}} $assets --clobber -R {{.REPOSITORY}}"
