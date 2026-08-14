@@ -42,6 +42,7 @@
 #       runner: go run
 
 pre-commit:
+  parallel: true
   jobs:
     - name: biome
       glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,css,json,jsonc}"
