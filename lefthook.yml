@@ -42,19 +42,11 @@
 #       runner: go run
 
 pre-commit:
-  parallel: true
   jobs:
-    - name: biome
-      glob: "*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,css,json,jsonc}"
-      run: pnx @biomejs/biome check --write --unsafe --no-errors-on-unmatched {staged_files}
+    - name: oxlint
+      run: pnx oxlint --fix-suggestions --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
 
-    - name: prettier
-      glob: "*.{html,json5,md,yml,yaml}"
-      run: pnx prettier --write {staged_files}
-      stage_fixed: true
-
-    - name: tombi
-      glob: "*.toml"
-      run: tombi format {staged_files}
+    - name: oxfmt
+      run: pnx oxfmt --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true

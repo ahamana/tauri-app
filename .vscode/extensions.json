@@ -1,17 +1,15 @@
 {
   "recommendations": [
     "bierner.markdown-preview-github-styles",
-    "biomejs.biome",
     "blueglassblock.better-json5",
     "bradlc.vscode-tailwindcss",
     "eamodio.gitlens",
-    "esbenp.prettier-vscode",
     "github.vscode-github-actions",
+    "oxc.oxc-vscode",
     "redhat.vscode-yaml",
     "rust-lang.rust-analyzer",
     "streetsidesoftware.code-spell-checker",
     "tauri-apps.tauri-vscode",
-    "tombi-toml.tombi",
     "yoavbls.pretty-ts-errors"
   ]
 }

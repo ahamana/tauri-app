@@ -1,7 +1,9 @@
 import { invoke } from "@tauri-apps/api/core";
 import { useEffect, useState } from "react";
+
 import reactLogo from "@/assets/react.svg";
 import { checkUpdate } from "@/lib/updater";
+
 import "@/App.css";
 
 function App() {
