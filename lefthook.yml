@@ -53,3 +53,8 @@ pre-commit:
       glob: "*.{html,json5,md,yml,yaml}"
       run: pnx prettier --write {staged_files}
       stage_fixed: true
+
+    - name: tombi
+      glob: "*.toml"
+      run: tombi format {staged_files}
+      stage_fixed: true
