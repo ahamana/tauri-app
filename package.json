@@ -21,26 +21,14 @@
     "react-dom": "^19.2.8"
   },
   "devDependencies": {
-    "@eslint/config-helpers": "^0.7.0",
-    "@eslint/js": "^9.39.5",
+    "@biomejs/biome": "^2.5.8",
     "@tauri-apps/cli": "^2.11.4",
     "@types/node": "^26.2.0",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
-    "@typescript/native": "npm:typescript@^7.0.2",
     "@vitejs/plugin-react": "^6.0.5",
-    "eslint": "^9.39.5",
-    "eslint-config-prettier": "^10.1.8",
-    "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import-x": "^4.17.1",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-unused-imports": "^4.4.1",
-    "jiti": "^2.7.0",
     "prettier": "^3.9.6",
-    "prettier-plugin-organize-imports": "^4.3.0",
-    "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "^8.67.0",
+    "typescript": "^7.0.2",
     "vite": "^8.2.1"
   }
 }
