@@ -4,18 +4,18 @@
 
     /* Bundler mode */
     "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react-jsx",
+    "noEmit": true,
+    "resolveJsonModule": true,
     "paths": {
       "@/*": ["./src/*"]
     },
 
     /* Linting */
+    "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noUnusedParameters": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
