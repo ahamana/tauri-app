@@ -2,4 +2,5 @@
 lefthook = "latest"
 node = "24"
 rust = "latest"
+task = "latest"
 tombi = "latest"
