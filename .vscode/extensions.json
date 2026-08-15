@@ -10,6 +10,7 @@
     "rust-lang.rust-analyzer",
     "streetsidesoftware.code-spell-checker",
     "tauri-apps.tauri-vscode",
+    "tombi-toml.tombi",
     "yoavbls.pretty-ts-errors"
   ]
 }

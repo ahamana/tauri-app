@@ -4,5 +4,8 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.oxc": "explicit"
   },
-  "oxc.fixKind": "safe_fix_or_suggestion"
+  "oxc.fixKind": "safe_fix_or_suggestion",
+  "[toml]": {
+    "editor.defaultFormatter": "tombi-toml.tombi"
+  }
 }
