@@ -41,6 +41,8 @@
 #     - script: "hello.go"
 #       runner: go run
 
+rc: ./.lefthookrc
+
 pre-commit:
   jobs:
     - name: oxlint
