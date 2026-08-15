@@ -1,6 +1,6 @@
 [tools]
 lefthook = "latest"
-node = "24"
+node = "lts"
 pnpm = "latest"
 rust = "latest"
 task = "latest"
