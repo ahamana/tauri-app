@@ -8,8 +8,8 @@
     "oxc.oxc-vscode",
     "redhat.vscode-yaml",
     "rust-lang.rust-analyzer",
-    "streetsidesoftware.code-spell-checker",
     "tauri-apps.tauri-vscode",
+    "tekumara.typos-vscode",
     "tombi-toml.tombi",
     "yoavbls.pretty-ts-errors"
   ]
