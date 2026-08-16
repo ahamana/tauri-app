@@ -24,7 +24,7 @@ jobs:
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: jdx/mise-action@v4.2.4
+        uses: jdx/mise-action@v4.2.5
         with:
           install_args: node
 
@@ -65,7 +65,7 @@ jobs:
             libwebkit2gtk-4.1-dev
 
       - name: Set up Rust
-        uses: jdx/mise-action@v4.2.4
+        uses: jdx/mise-action@v4.2.5
         with:
           install_args: rust
 
