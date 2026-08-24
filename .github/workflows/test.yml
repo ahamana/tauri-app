@@ -88,7 +88,7 @@ jobs:
         run: cargo nextest run --profile ci
 
       - name: Publish test report
-        uses: ctrf-io/github-test-reporter@v1.1.1
+        uses: ctrf-io/github-test-reporter@v1.3.0
         with:
           report-path: src-tauri/target/nextest/ci/junit.xml
           title: Rust Test Report
