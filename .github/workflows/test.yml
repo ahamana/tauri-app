@@ -70,7 +70,7 @@ jobs:
           install_args: rust
 
       - name: Install Rust development tools
-        uses: taiki-e/install-action@v2.86.5
+        uses: taiki-e/install-action@v2.86.6
         with:
           tool: cargo-nextest
 
