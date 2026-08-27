@@ -46,7 +46,7 @@ rc: ./.lefthookrc
 pre-commit:
   jobs:
     - name: oxlint
-      run: pnx oxlint --fix-suggestions --no-error-on-unmatched-pattern {staged_files}
+      run: pnx oxlint --fix --fix-suggestions --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
 
     - name: oxfmt
