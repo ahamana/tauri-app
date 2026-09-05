@@ -19,12 +19,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
       - name: Set up pnpm and install frontend dependencies
-        uses: pnpm/setup@v2.1.0
+        uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
 
       - name: Run tests
         run: >-
@@ -34,7 +34,7 @@ jobs:
 
       - name: Publish test report
         if: always()
-        uses: ctrf-io/github-test-reporter@v1.3.0
+        uses: ctrf-io/github-test-reporter@7974087018bf4857cf5a9d78723e152038c3fa31 # v1.3.0
         with:
           report-path: .vitest/junit/output.xml
           title: WebView Test Report
@@ -57,7 +57,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
@@ -71,22 +71,22 @@ jobs:
             libwebkit2gtk-4.1-dev
 
       - name: Set up Rust
-        uses: jdx/mise-action@v4.3.0
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
         with:
           install_args: rust
 
       - name: Install Rust development tools
-        uses: taiki-e/install-action@v2.87.4
+        uses: taiki-e/install-action@e67fa11c4b9316fa714ddf0abed07a0c3143b95b # v2.87.4
         with:
           tool: cargo-nextest
 
       - name: Configure Rust cache
-        uses: Swatinem/rust-cache@v2.9.2
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
         with:
           workspaces: src-tauri
 
       - name: Run Clippy
-        uses: giraffate/clippy-action@v1.0.1
+        uses: giraffate/clippy-action@13b9d32482f25d29ead141b79e7e04e7900281e0 # v1.0.1
         with:
           filter_mode: nofilter
 
@@ -95,7 +95,7 @@ jobs:
 
       - name: Publish test report
         if: always()
-        uses: ctrf-io/github-test-reporter@v1.3.0
+        uses: ctrf-io/github-test-reporter@7974087018bf4857cf5a9d78723e152038c3fa31 # v1.3.0
         with:
           report-path: src-tauri/target/nextest/ci/junit.xml
           title: Rust Test Report

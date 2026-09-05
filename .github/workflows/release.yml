@@ -23,26 +23,26 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
       - name: Set up pnpm and install frontend dependencies
-        uses: pnpm/setup@v2.1.0
+        uses: pnpm/setup@703c52620218391530e48b9e8870d5c0082e1b9b # v2.1.0
 
       - name: Set up Rust
-        uses: jdx/mise-action@v4.3.0
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
         with:
           install_args: rust
 
       - name: Configure Rust cache
-        uses: Swatinem/rust-cache@v2.9.2
+        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
         with:
           workspaces: src-tauri
 
       - name: Build and release application
         id: build
-        uses: tauri-apps/tauri-action@v1.0.0
+        uses: tauri-apps/tauri-action@1deb371b0cd8bd54025b384f1cd735e725c4060f # v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           VITE_MODE: production
@@ -71,7 +71,7 @@ jobs:
 
       - name: Release Windows portable asset
         if: runner.os == 'Windows'
-        uses: softprops/action-gh-release@v3.0.3
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
           files: ${{ env.WINDOWS_PORTABLE_ASSET }}
@@ -79,7 +79,7 @@ jobs:
           token: ${{ secrets.DEPLOY_TOKEN }}
 
       - name: Create tag
-        uses: softprops/action-gh-release@v3.0.3
+        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
           body: v${{ steps.build.outputs.appVersion }} release

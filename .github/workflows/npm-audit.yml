@@ -16,12 +16,12 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: jdx/mise-action@v4.3.0
+        uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
         with:
           install_args: node
 
@@ -29,7 +29,7 @@ jobs:
         run: npm install
 
       - name: Run npm audit
-        uses: oke-py/npm-audit-action@v5.4.1
+        uses: oke-py/npm-audit-action@4fa25b0230596f76d96b7e50b66b1e3a0d185d9f # v5.4.1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dedupe_comments: true
