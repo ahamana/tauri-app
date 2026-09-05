@@ -5,6 +5,8 @@
     "source.fixAll.oxc": "explicit",
     "source.removeUnusedImports": "explicit"
   },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
