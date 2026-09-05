@@ -2,7 +2,7 @@ import { ask } from "@tauri-apps/plugin-dialog";
 import { relaunch } from "@tauri-apps/plugin-process";
 import { check } from "@tauri-apps/plugin-updater";
 import type { Update } from "@tauri-apps/plugin-updater";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { checkUpdate } from "@/lib/updater";
 
@@ -18,10 +18,6 @@ function mockUpdate() {
 }
 
 describe("checkUpdate", () => {
-  afterEach(() => {
-    vi.resetAllMocks();
-  });
-
   it("does not prompt when no update is available", async () => {
     vi.mocked(check).mockResolvedValue(null);
 

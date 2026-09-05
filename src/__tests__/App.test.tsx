@@ -1,7 +1,7 @@
 import { invoke } from "@tauri-apps/api/core";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import App from "@/App";
 import { checkUpdate } from "@/lib/updater";
@@ -10,10 +10,6 @@ vi.mock("@tauri-apps/api/core");
 vi.mock("@/lib/updater");
 
 describe("App", () => {
-  afterEach(() => {
-    vi.resetAllMocks();
-  });
-
   it("checks for updates on mount", () => {
     render(<App />);
 
