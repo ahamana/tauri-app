@@ -37,10 +37,12 @@ jobs:
           --reporter=junit
 
       - name: Publish test report
+        if: always()
         uses: ctrf-io/github-test-reporter@v1.3.0
         with:
           report-path: .vitest/junit/output.xml
           title: WebView Test Report
+          use-suite-name: true
           integrations-config: |
             {
               "junit-to-ctrf": {
@@ -96,10 +98,12 @@ jobs:
         run: cargo nextest run --profile ci
 
       - name: Publish test report
+        if: always()
         uses: ctrf-io/github-test-reporter@v1.3.0
         with:
           report-path: src-tauri/target/nextest/ci/junit.xml
           title: Rust Test Report
+          use-suite-name: true
           integrations-config: |
             {
               "junit-to-ctrf": {
