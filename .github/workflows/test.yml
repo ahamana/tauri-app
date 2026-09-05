@@ -38,6 +38,7 @@ jobs:
         with:
           report-path: .vitest/junit/output.xml
           title: WebView Test Report
+          collapse-large-reports: true
           use-suite-name: true
           integrations-config: |
             {
@@ -99,6 +100,7 @@ jobs:
         with:
           report-path: src-tauri/target/nextest/ci/junit.xml
           title: Rust Test Report
+          collapse-large-reports: true
           use-suite-name: true
           integrations-config: |
             {
