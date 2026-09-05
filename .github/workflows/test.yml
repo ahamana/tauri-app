@@ -36,12 +36,11 @@ jobs:
           pnpm run test
           --reporter=default
           --reporter=junit
-          --outputFile=junit-report.xml
 
       - name: Publish test report
         uses: ctrf-io/github-test-reporter@v1.3.0
         with:
-          report-path: junit-report.xml
+          report-path: .vitest/junit/output.xml
           title: WebView Test Report
           integrations-config: |
             {
