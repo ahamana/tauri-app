@@ -4,6 +4,7 @@ lefthook = "latest"
 node = "lts"
 pnpm = "latest"
 rust = "latest"
+shellcheck = "latest"
 task = "latest"
 tombi = "latest"
 

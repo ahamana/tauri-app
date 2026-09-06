@@ -59,6 +59,7 @@ jobs:
 
       - name: Create Windows portable asset
         if: runner.os == 'Windows'
+        shell: pwsh
         run: |
           ConvertFrom-Json '${{ steps.build.outputs.artifactPaths }}' | ForEach-Object {
               if ((Split-Path $_ -Leaf) -match '(.+)-setup\.exe$') {
