@@ -1,4 +1,5 @@
 [tools]
+actionlint = "latest"
 lefthook = "latest"
 node = "lts"
 pnpm = "latest"
