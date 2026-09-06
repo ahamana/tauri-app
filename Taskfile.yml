@@ -22,7 +22,7 @@ tasks:
     cmds:
       - cmd: git switch main
       - cmd: git pull
-      - cmd: pnpm install --frozen-lockfile
+      - cmd: pnpm ci
       - cmd: pnpm run tauri build
       - cmd: git switch -
     silent: true
