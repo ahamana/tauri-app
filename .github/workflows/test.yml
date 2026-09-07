@@ -88,6 +88,7 @@ jobs:
         uses: giraffate/clippy-action@13b9d32482f25d29ead141b79e7e04e7900281e0 # v1.0.1
         with:
           filter_mode: nofilter
+          workdir: src-tauri
 
       - name: Run tests
         run: cargo nextest run --profile ci
