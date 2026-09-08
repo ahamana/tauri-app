@@ -1,5 +1,6 @@
 [tools]
 actionlint = "latest"
+ghalint = "latest"
 lefthook = "latest"
 node = "lts"
 pnpm = "latest"
@@ -7,6 +8,7 @@ rust = "latest"
 shellcheck = "latest"
 task = "latest"
 tombi = "latest"
+zizmor = "latest"
 
 [hooks]
 postinstall = "lefthook install"
