@@ -60,8 +60,10 @@ jobs:
       - name: Create Windows portable asset
         if: runner.os == 'Windows'
         shell: pwsh
+        env:
+          ARTIFACT_PATHS: ${{ steps.build.outputs.artifactPaths }}
         run: |
-          ConvertFrom-Json '${{ steps.build.outputs.artifactPaths }}' | ForEach-Object {
+          ConvertFrom-Json $env:ARTIFACT_PATHS | ForEach-Object {
               if ((Split-Path $_ -Leaf) -match '(.+)-setup\.exe$') {
                   $asset = Join-Path $PWD "$($Matches[1]).zip"
                   Compress-Archive *.exe,third-party $asset
