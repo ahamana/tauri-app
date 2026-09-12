@@ -49,16 +49,15 @@ tasks:
             $assets = Get-ChildItem bundle "*_{{.VERSION}}_*" -Recurse | Select-Object -ExpandProperty FullName
             $signatureFile = $assets | Where-Object { $_ -Like "*_{{.VERSION}}_*.msi.sig" }
             $signature = (Get-Content $signatureFile -Raw).Trim()
-            Invoke-Expression "gh release download {{.TAG}} -p latest.json --clobber -R {{.REPOSITORY}}"
+            gh release download {{.TAG}} -p latest.json --clobber -R {{.REPOSITORY}}
             $jsonFile = Convert-Path latest.json
             $json = Get-Content $jsonFile -Raw | ConvertFrom-Json
             $json.platforms."windows-x86_64".signature = $signature
             ConvertTo-Json $json -Depth 100 | Set-Content $jsonFile
-            Invoke-Expression "pnx prettier --write $jsonFile"
-            $assets += $jsonFile 
-            $assets = $assets | ForEach-Object { "`"$_`"" }
-            Invoke-Expression "gh release upload {{.TAG}} $assets --clobber -R {{.REPOSITORY}}"
-            Invoke-Expression "gh release edit {{.TAG}} --draft=false --latest -R {{.REPOSITORY}}"
+            pnx prettier --write $jsonFile
+            $assets += $jsonFile
+            gh release upload {{.TAG}} $assets --clobber -R {{.REPOSITORY}}
+            gh release edit {{.TAG}} --draft=false --latest -R {{.REPOSITORY}}
           '
       - cmd: git switch -
     silent: true

@@ -68,7 +68,7 @@ jobs:
               if ((Split-Path $_ -Leaf) -match '(.+)-setup\.exe$') {
                   $asset = Join-Path $PWD "$($Matches[1]).zip"
                   Compress-Archive *.exe,third-party $asset
-                  echo "WINDOWS_PORTABLE_ASSET=$asset" >> "$env:GITHUB_ENV"
+                  Write-Output "WINDOWS_PORTABLE_ASSET=$asset" >> $env:GITHUB_ENV
               }
           }
         working-directory: src-tauri/target/release
