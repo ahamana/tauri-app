@@ -35,11 +35,13 @@ jobs:
         uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
         with:
           install_args: rust
+          cache: false
 
       - name: Configure Rust cache
         uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
         with:
           workspaces: src-tauri
+          lookup-only: true
 
       - name: Build and release application
         id: build
@@ -73,7 +75,7 @@ jobs:
           }
         working-directory: src-tauri/target/release
 
-      - name: Release Windows portable asset
+      - name: Release Windows portable asset # zizmor: ignore[superfluous-actions]
         if: runner.os == 'Windows'
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
         with:
@@ -82,7 +84,7 @@ jobs:
           repository: ${{ github.repository_owner }}/tauri-app-release
           token: ${{ secrets.DEPLOY_TOKEN }}
 
-      - name: Create tag
+      - name: Create tag # zizmor: ignore[superfluous-actions]
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
