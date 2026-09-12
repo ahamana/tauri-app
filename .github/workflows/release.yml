@@ -65,6 +65,7 @@ jobs:
         shell: pwsh
         env:
           ARTIFACT_PATHS: ${{ steps.build.outputs.artifactPaths }}
+        working-directory: src-tauri/target/release
         run: |
           ConvertFrom-Json $env:ARTIFACT_PATHS | ForEach-Object {
               if ((Split-Path $_ -Leaf) -match '(.+)-setup\.exe$') {
@@ -73,7 +74,6 @@ jobs:
                   Write-Output "WINDOWS_PORTABLE_ASSET=$asset" >> $env:GITHUB_ENV
               }
           }
-        working-directory: src-tauri/target/release
 
       - name: Release Windows portable asset # zizmor: ignore[superfluous-actions]
         if: runner.os == 'Windows'
