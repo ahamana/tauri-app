@@ -5,12 +5,12 @@
     "bradlc.vscode-tailwindcss",
     "eamodio.gitlens",
     "github.vscode-github-actions",
-    "oxc.oxc-vscode",
     "redhat.vscode-yaml",
     "rust-lang.rust-analyzer",
     "tauri-apps.tauri-vscode",
     "tekumara.typos-vscode",
     "tombi-toml.tombi",
+    "voidzero.vite-plus-extension-pack",
     "yoavbls.pretty-ts-errors"
   ]
 }

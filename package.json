@@ -4,11 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build",
-    "dev": "vite",
-    "preview": "vite preview",
+    "build": "tsc && vp build",
+    "dev": "vp dev",
+    "preview": "vp preview",
     "tauri": "tauri",
-    "test": "vitest"
+    "test": "vp test"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.11.1",
@@ -29,11 +29,9 @@
     "@vitejs/plugin-react": "^6.1.1",
     "jsdom": "^30.0.1",
     "knip": "^6.35.1",
-    "oxfmt": "^0.67.0",
-    "oxlint": "^1.82.0",
     "typescript": "^7.0.2",
-    "vite": "^8.3.0",
-    "vitest": "^5.0.0"
+    "vite": "npm:@voidzero-dev/vite-plus-core@~0.3.1",
+    "vite-plus": "~0.3.1"
   },
   "packageManager": "pnpm@12.4.1"
 }

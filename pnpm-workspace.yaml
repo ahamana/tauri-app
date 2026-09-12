@@ -1,2 +1,5 @@
+peerDependencyRules:
+  allowAny:
+    - vite
 update:
   githubActions: true

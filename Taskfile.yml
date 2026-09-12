@@ -22,8 +22,8 @@ tasks:
     cmds:
       - cmd: git switch main
       - cmd: git pull
-      - cmd: pnpm ci
-      - cmd: pnpm run tauri build
+      - cmd: vp pm ci
+      - cmd: vpr tauri build
       - cmd: git switch -
     silent: true
 
@@ -54,7 +54,7 @@ tasks:
             $json = Get-Content $jsonFile -Raw | ConvertFrom-Json
             $json.platforms."windows-x86_64".signature = $signature
             ConvertTo-Json $json -Depth 100 | Set-Content $jsonFile
-            pnx oxfmt $jsonFile
+            vp fmt $jsonFile
             $assets += $jsonFile
             gh release upload {{.TAG}} $assets --clobber -R {{.REPOSITORY}}
             gh release edit {{.TAG}} --draft=false --latest -R {{.REPOSITORY}}
