@@ -14,7 +14,7 @@ function mockUpdate() {
   return {
     version: "1.2.3",
     downloadAndInstall: vi.fn().mockResolvedValue(undefined),
-  } as unknown as Update;
+  };
 }
 
 describe("checkUpdate", () => {
@@ -29,7 +29,7 @@ describe("checkUpdate", () => {
 
   it("installs the update and relaunches when accepted", async () => {
     const update = mockUpdate();
-    vi.mocked(check).mockResolvedValue(update);
+    vi.mocked(check).mockResolvedValue(update as unknown as Update);
     vi.mocked(ask).mockResolvedValue(true);
 
     await checkUpdate();
@@ -41,7 +41,7 @@ describe("checkUpdate", () => {
 
   it("does nothing when the update is declined", async () => {
     const update = mockUpdate();
-    vi.mocked(check).mockResolvedValue(update);
+    vi.mocked(check).mockResolvedValue(update as unknown as Update);
     vi.mocked(ask).mockResolvedValue(false);
 
     await checkUpdate();

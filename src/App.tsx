@@ -8,7 +8,7 @@ import "@/App.css";
 
 function App() {
   useEffect(() => {
-    checkUpdate();
+    void checkUpdate();
   }, []);
 
   const [greetMsg, setGreetMsg] = useState("");
@@ -40,7 +40,7 @@ function App() {
         className="row"
         onSubmit={(e) => {
           e.preventDefault();
-          greet();
+          void greet();
         }}
       >
         <input

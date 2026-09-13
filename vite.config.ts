@@ -12,6 +12,10 @@ export default defineConfig({
 
   // Oxlint configuration
   lint: {
+    options: {
+      typeAware: true,
+      typeCheck: true,
+    },
     plugins: ["import", "oxc", "react", "typescript", "unicorn"],
     rules: {
       "import/consistent-type-specifier-style": "warn",
