@@ -28,7 +28,7 @@ jobs:
 
       - name: Run tests
         run: >-
-          vp test
+          vpr test
           --reporter=default
           --reporter=junit
 
