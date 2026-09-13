@@ -16,7 +16,6 @@ tasks:
     deps:
       - build:clean
     env:
-      VITE_MODE: production
       TAURI_SIGNING_PRIVATE_KEY: "{{.ROOT_DIR}}/.tauri/updater.key"
       TAURI_SIGNING_PRIVATE_KEY_PASSWORD:
     cmds:

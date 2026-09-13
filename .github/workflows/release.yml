@@ -50,7 +50,6 @@ jobs:
         uses: tauri-apps/tauri-action@1deb371b0cd8bd54025b384f1cd735e725c4060f # v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-          VITE_MODE: production
           TAURI_SIGNING_PRIVATE_KEY: ${{ github.workspace }}/.tauri/updater.key
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
