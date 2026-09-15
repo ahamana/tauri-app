@@ -17,6 +17,17 @@ updates:
       timezone: Asia/Tokyo
     cooldown:
       default-days: 7
+    groups:
+      react:
+        patterns:
+          - react
+          - react-dom
+          - "@types/react"
+          - "@types/react-dom"
+      vite-plus:
+        patterns:
+          - vite-plus
+          - "@voidzero-dev/vite-plus-*"
 
   - package-ecosystem: cargo
     directory: /src-tauri
