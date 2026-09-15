@@ -5,7 +5,6 @@ vite-plus = "https://github.com/markmals/mise-vite-plus"
 actionlint = "latest"
 ghalint = "latest"
 lefthook = { version = "latest", postinstall = "lefthook install" }
-node = "lts"
 rust = "latest"
 shellcheck = "latest"
 task = "latest"
