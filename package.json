@@ -7,6 +7,7 @@
     "build": "tsc && vp build",
     "dev": "vp dev",
     "preview": "vp preview",
+    "react-doctor": "react-doctor",
     "tauri": "tauri",
     "test": "vp test"
   },
@@ -29,9 +30,10 @@
     "@vitejs/plugin-react": "^6.1.1",
     "jsdom": "^30.0.1",
     "knip": "^6.35.1",
+    "react-doctor": "^0.9.14",
     "typescript": "^7.0.2",
     "vite": "npm:@voidzero-dev/vite-plus-core@^0.3.1",
     "vite-plus": "^0.3.1"
   },
-  "packageManager": "pnpm@12.4.1"
+  "packageManager": "pnpm@12.4.2"
 }
