@@ -1,5 +1,5 @@
 import { invoke } from "@tauri-apps/api/core";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import reactLogo from "@/assets/react.svg";
 import { checkUpdate } from "@/lib/updater";
@@ -12,11 +12,11 @@ function App() {
   }, []);
 
   const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
+  const nameRef = useRef("");
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
+    setGreetMsg(await invoke("greet", { name: nameRef.current }));
   }
 
   return (
@@ -43,9 +43,14 @@ function App() {
           void greet();
         }}
       >
+        <label htmlFor="greet-input" id="greet-label">
+          Name
+        </label>
         <input
           id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
+          onChange={(e) => {
+            nameRef.current = e.currentTarget.value;
+          }}
           placeholder="Enter a name..."
         />
         <button type="submit">Greet</button>

@@ -22,7 +22,7 @@ describe("App", () => {
 
     render(<App />);
 
-    await user.type(screen.getByPlaceholderText("Enter a name..."), "Tauri");
+    await user.type(screen.getByLabelText("Name"), "Tauri");
     await user.click(screen.getByRole("button", { name: "Greet" }));
 
     expect(invoke).toHaveBeenCalledWith("greet", { name: "Tauri" });
