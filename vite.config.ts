@@ -16,7 +16,7 @@ export default defineConfig({
       typeAware: true,
       typeCheck: true,
     },
-    plugins: ["import", "oxc", "react", "typescript", "unicorn"],
+    plugins: ["import", "jsx-a11y", "oxc", "react", "typescript", "unicorn"],
     rules: {
       "import/consistent-type-specifier-style": "warn",
       "typescript/consistent-type-imports": "warn",
