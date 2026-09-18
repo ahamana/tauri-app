@@ -4,10 +4,13 @@ vite-plus = "https://github.com/markmals/mise-vite-plus"
 [tools]
 actionlint = "latest"
 ghalint = "latest"
-lefthook = { version = "latest", postinstall = "lefthook install" }
+lefthook = "latest"
 rust = "latest"
 shellcheck = "latest"
 task = "latest"
 tombi = "latest"
 vite-plus = "latest"
 zizmor = "latest"
+
+[hooks]
+postinstall = "lefthook install"
