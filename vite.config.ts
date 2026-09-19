@@ -18,8 +18,19 @@ export default defineConfig({
       typeCheck: true,
     },
     plugins: ["import", "jsx-a11y", "oxc", "react", "typescript", "unicorn"],
+    jsPlugins: ["oxlint-tailwindcss"],
+    settings: {
+      tailwindcss: {
+        entryPoint: "src/App.css",
+      },
+    },
     rules: {
       "import/consistent-type-specifier-style": "warn",
+      "tailwindcss/no-conflicting-classes": "error",
+      "tailwindcss/no-deprecated-classes": "error",
+      "tailwindcss/no-duplicate-classes": "error",
+      "tailwindcss/no-unknown-classes": "error",
+      "tailwindcss/no-unnecessary-whitespace": "error",
       "typescript/consistent-type-imports": "warn",
     },
   },
