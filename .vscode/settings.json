@@ -5,6 +5,9 @@
     "source.fixAll.oxc": "explicit",
     "source.removeUnusedImports": "explicit"
   },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "[rust]": {
