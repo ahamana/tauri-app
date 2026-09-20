@@ -49,6 +49,10 @@ export default defineConfig({
 
   // Vitest configuration
   test: {
+    coverage: {
+      exclude: ["**/*.d.ts"],
+      include: ["src/**/*.{ts,tsx}"],
+    },
     environment: "jsdom",
     mockReset: true,
     // Vitest 4 has no default file output, so the CI report path is set explicitly

@@ -29,6 +29,7 @@ jobs:
       - name: Run tests
         run: >-
           vpr test
+          --coverage
           --reporter=default
           --reporter=junit
 
