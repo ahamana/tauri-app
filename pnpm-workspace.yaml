@@ -1,5 +1,8 @@
+update:
+  githubActions: true
+trustPolicy: no-downgrade
+trustPolicyExclude:
+  - semver@6.3.1
 peerDependencyRules:
   allowAny:
     - vite
-update:
-  githubActions: true
