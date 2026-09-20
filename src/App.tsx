@@ -1,16 +1,11 @@
 import { invoke } from "@tauri-apps/api/core";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 
 import reactLogo from "@/assets/react.svg";
-import { checkUpdate } from "@/lib/updater";
 
 import "@/App.css";
 
 function App() {
-  useEffect(() => {
-    void checkUpdate();
-  }, []);
-
   const [greetMsg, setGreetMsg] = useState("");
   const nameRef = useRef("");
 
