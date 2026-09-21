@@ -30,19 +30,12 @@ jobs:
 
       - name: Set up Vite+ and install frontend dependencies
         uses: voidzero-dev/setup-vp@24d870228786dc83ae73482406bdd1e7befaec14 # v1.21.0
-        with:
-          cache: true
 
       - name: Set up Rust
         uses: jdx/mise-action@c2a87611a18de5b3828c5652fe268e992400cb5c # v4.3.0
         with:
           install_args: rust
           cache: false
-
-      - name: Configure Rust cache # zizmor: ignore[cache-poisoning]
-        uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
-        with:
-          workspaces: src-tauri
 
       - name: Build and release application
         id: build
