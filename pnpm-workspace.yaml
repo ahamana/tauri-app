@@ -1,5 +1,6 @@
 update:
   githubActions: true
+minimumReleaseAge: 10080
 trustPolicy: no-downgrade
 trustPolicyExclude:
   - semver@6.3.1
