@@ -53,7 +53,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:
-      checks: write
       contents: read
     env:
       CARGO_TERM_COLOR: always
@@ -93,10 +92,11 @@ jobs:
           workspaces: src-tauri
 
       - name: Run Clippy
-        uses: giraffate/clippy-action@13b9d32482f25d29ead141b79e7e04e7900281e0 # v1.0.1
+        uses: auguwu/clippy-action@9817d076b82df0194935be9db6154c56ac07b317 # 1.5.0
         with:
-          filter_mode: nofilter
-          workdir: src-tauri
+          token: ${{ github.token }}
+          working-directory: src-tauri
+          args: -D warnings
 
       - name: Run tests
         run: cargo nextest run --profile ci
