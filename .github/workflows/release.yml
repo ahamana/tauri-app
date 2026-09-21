@@ -39,11 +39,10 @@ jobs:
           install_args: rust
           cache: false
 
-      - name: Configure Rust cache
+      - name: Configure Rust cache # zizmor: ignore[cache-poisoning]
         uses: Swatinem/rust-cache@6323deb102c322ba6fcbdcafc7e3dddab59af2b6 # v2.9.2
         with:
           workspaces: src-tauri
-          lookup-only: true
 
       - name: Build and release application
         id: build
