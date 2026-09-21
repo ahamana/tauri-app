@@ -40,7 +40,7 @@ jobs:
           title: WebView Test Report
           collapse-large-reports: true
           use-suite-name: true
-          integrations-config: |
+          integrations-config: &junit-to-ctrf-integration |
             {
               "junit-to-ctrf": {
                 "enabled": true
@@ -108,9 +108,4 @@ jobs:
           title: Rust Test Report
           collapse-large-reports: true
           use-suite-name: true
-          integrations-config: |
-            {
-              "junit-to-ctrf": {
-                "enabled": true
-              }
-            }
+          integrations-config: *junit-to-ctrf-integration
