@@ -53,6 +53,11 @@ pre-commit:
       run: vp fmt --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
 
+    - name: markdownlint
+      glob: "*.md"
+      run: vpr lint:markdown --fix --no-globs {staged_files}
+      stage_fixed: true
+
     - name: tombi
       glob: "*.toml"
       run: tombi format {staged_files}

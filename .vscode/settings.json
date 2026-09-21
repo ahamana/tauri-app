@@ -2,6 +2,7 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "oxc.oxc-vscode",
   "editor.codeActionsOnSave": {
+    "source.fixAll.markdownlint": "explicit",
     "source.fixAll.oxc": "explicit",
     "source.removeUnusedImports": "explicit"
   },

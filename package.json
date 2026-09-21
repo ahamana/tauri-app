@@ -6,6 +6,7 @@
   "scripts": {
     "build": "tsc && vp build",
     "dev": "vp dev",
+    "lint:markdown": "markdownlint-cli2",
     "preview": "vp preview",
     "tauri": "tauri",
     "test": "vp test"
@@ -31,6 +32,7 @@
     "@vitest/coverage-v8": "^4.1.11",
     "jsdom": "^30.1.0",
     "knip": "^6.37.0",
+    "markdownlint-cli2": "^0.23.3",
     "oxlint-tailwindcss": "^1.12.0",
     "react-doctor": "^0.9.14",
     "tailwindcss": "^4.3.3",
