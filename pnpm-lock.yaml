@@ -178,6 +178,9 @@ importers:
       '@tauri-apps/plugin-updater':
         specifier: ^2.12.0
         version: 2.12.0
+      cn:
+        specifier: ^0.3.0
+        version: 0.3.0
       react:
         specifier: ^19.3.0
         version: 19.3.0
@@ -2166,6 +2169,11 @@ packages:
 
   cjs-module-lexer@2.2.1:
     resolution: {integrity: sha512-Ca8swihM+/4yKecYHY52kgJd300hi2lADU/a1RxNTRe+RJ9jvqQlESpbz9DnG9mowez8qwXHB8qYdIUw9e+F5Q==}
+
+  cn@0.3.0:
+    resolution: {integrity: sha512-qRoU0ARrZD3Bbj1wKFftEKxPjSnzTEdFkf22NVhW+zU9D/wajhoP+qUZ5DChhhSOBCH1onV12hrmGqfu1+5Z2Q==}
+    engines: {node: '>=20'}
+    hasBin: true
 
   commander@14.0.3:
     resolution: {integrity: sha512-H+y0Jo/T1RZ9qPP4Eh1pkcQcLRglraJaSLoyOtHxu6AapkjWVCy2Sit1QQ4x3Dng8qDlSsZEet7g5Pq06MvTgw==}
@@ -4760,6 +4768,8 @@ snapshots:
   character-reference-invalid@2.0.1: {}
 
   cjs-module-lexer@2.2.1: {}
+
+  cn@0.3.0: {}
 
   commander@14.0.3: {}
 

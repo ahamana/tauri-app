@@ -1,9 +1,32 @@
 import { invoke } from "@tauri-apps/api/core";
+import { cn } from "cn";
 import { useRef, useState } from "react";
 
 import reactLogo from "@/assets/react.svg";
 
 import "@/App.css";
+
+function Logo({
+  alt,
+  className,
+  href,
+  src,
+}: {
+  alt: string;
+  className?: string;
+  href: string;
+  src: string;
+}) {
+  return (
+    <a href={href} target="_blank" rel="noreferrer">
+      <img
+        src={src}
+        className={cn("h-24 p-6 transition-[filter] duration-750", className)}
+        alt={alt}
+      />
+    </a>
+  );
+}
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
@@ -19,27 +42,24 @@ function App() {
       <h1 className="my-[0.67em] text-[2em] font-bold">Welcome to Tauri + React</h1>
 
       <div className="flex items-center justify-center">
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img
-            src="/vite.svg"
-            className="h-24 p-6 transition-[filter] duration-750 hover:drop-shadow-vite"
-            alt="Vite logo"
-          />
-        </a>
-        <a href="https://tauri.app" target="_blank" rel="noreferrer">
-          <img
-            src="/tauri.svg"
-            className="h-24 p-6 transition-[filter] duration-750 hover:drop-shadow-tauri"
-            alt="Tauri logo"
-          />
-        </a>
-        <a href="https://reactjs.org" target="_blank" rel="noreferrer">
-          <img
-            src={reactLogo}
-            className="h-24 p-6 transition-[filter] duration-750 hover:drop-shadow-react"
-            alt="React logo"
-          />
-        </a>
+        <Logo
+          href="https://vitejs.dev"
+          src="/vite.svg"
+          className="hover:drop-shadow-vite"
+          alt="Vite logo"
+        />
+        <Logo
+          href="https://tauri.app"
+          src="/tauri.svg"
+          className="hover:drop-shadow-tauri"
+          alt="Tauri logo"
+        />
+        <Logo
+          href="https://reactjs.org"
+          src={reactLogo}
+          className="hover:drop-shadow-react"
+          alt="React logo"
+        />
       </div>
       <p className="my-4">Click on the Tauri, Vite, and React logos to learn more.</p>
 

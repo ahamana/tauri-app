@@ -42,6 +42,7 @@ export default defineConfig({
       sortScripts: true,
     },
     sortTailwindcss: {
+      functions: ["cn"],
       stylesheet: "src/App.css",
     },
     ignorePatterns: ["*.toml", "pnpm-lock.yaml"],
