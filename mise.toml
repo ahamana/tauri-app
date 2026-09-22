@@ -7,6 +7,7 @@ vite-plus = "https://github.com/markmals/mise-vite-plus"
 [tools]
 actionlint = "latest"
 ghalint = "latest"
+jq = "latest"
 lefthook = "latest"
 rust = { version = "latest", components = "clippy" }
 shellcheck = "latest"
