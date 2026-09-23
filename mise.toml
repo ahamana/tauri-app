@@ -1,5 +1,6 @@
 [bootstrap.mise_shell_activate]
-bashrc = "activate"
+bashrc = true
+zshrc = true
 
 [plugins]
 vite-plus = "https://github.com/markmals/mise-vite-plus"
