@@ -1,0 +1,54 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "tauri-app",
+  "version": "0.1.4",
+  "identifier": "com.tauri-app.app",
+  "build": {
+    "beforeDevCommand": "vpr dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "vpr build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "tauri-app",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico"
+    ],
+    "resources": ["third-party"],
+    "externalBin": ["binaries/ffmpeg"],
+    "createUpdaterArtifacts": true,
+    "windows": {
+      "nsis": {
+        "languages": ["Japanese"]
+      },
+      "wix": {
+        "language": "ja-JP"
+      }
+    }
+  },
+  "plugins": {
+    "updater": {
+      "endpoints": [
+        "https://github.com/ahamana/tauri-app-release/releases/latest/download/latest.json"
+      ],
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEVGN0IxQTJENEY1RTUzNDIKUldSQ1UxNVBMUnA3N3hzZ2NhQ3BkVmlOSXFPeXRhZlZoczBDRHYvejNOOVh2VlF5N0RhbExyYXEK"
+    }
+  }
+}
