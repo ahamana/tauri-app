@@ -18,6 +18,9 @@ updates:
     cooldown:
       default-days: 7
     groups:
+      commitlint:
+        patterns:
+          - "@commitlint/*"
       react:
         patterns:
           - react

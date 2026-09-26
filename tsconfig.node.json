@@ -4,5 +4,5 @@
     "emitDeclarationOnly": true,
     "skipLibCheck": true
   },
-  "include": ["doctor.config.ts", "knip.config.ts", "vite.config.ts"]
+  "include": ["commitlint.config.ts", "doctor.config.ts", "knip.config.ts", "vite.config.ts"]
 }
