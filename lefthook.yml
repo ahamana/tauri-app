@@ -55,7 +55,7 @@ pre-commit:
 
     - name: markdownlint
       glob: "*.md"
-      run: vpr lint:markdown --fix --no-globs {staged_files}
+      run: vpx markdownlint-cli2 --fix --no-globs {staged_files}
       stage_fixed: true
 
     - name: tombi
@@ -66,4 +66,4 @@ pre-commit:
 commit-msg:
   jobs:
     - name: commitlint
-      run: vpr commitlint --edit {1}
+      run: vpx commitlint --edit {1}

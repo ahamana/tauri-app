@@ -8,3 +8,5 @@ autoDedupe: true
 peerDependencyRules:
   allowAny:
     - vite
+allowBuilds:
+  lefthook: true

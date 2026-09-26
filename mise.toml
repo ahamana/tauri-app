@@ -12,13 +12,9 @@ vite-plus = "https://github.com/markmals/mise-vite-plus"
 actionlint = "latest"
 ghalint = "latest"
 jq = "latest"
-lefthook = "latest"
 rust = { version = "latest", components = "clippy" }
 shellcheck = "latest"
 task = "latest"
 tombi = "latest"
 vite-plus = "latest"
 zizmor = "latest"
-
-[hooks]
-postinstall = "lefthook install"
