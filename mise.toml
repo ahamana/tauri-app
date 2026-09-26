@@ -11,6 +11,7 @@ vite-plus = "https://github.com/markmals/mise-vite-plus"
 [tools]
 actionlint = "latest"
 ghalint = "latest"
+github-cli = "latest"
 jq = "latest"
 rust = { version = "latest", components = "clippy" }
 shellcheck = "latest"
