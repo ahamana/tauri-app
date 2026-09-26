@@ -10,6 +10,7 @@ vite-plus = "https://github.com/markmals/mise-vite-plus"
 
 [tools]
 actionlint = "latest"
+claude = "latest"
 ghalint = "latest"
 github-cli = "latest"
 jq = "latest"
