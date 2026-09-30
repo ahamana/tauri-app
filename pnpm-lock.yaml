@@ -240,8 +240,8 @@ importers:
         specifier: ^0.23.3
         version: 0.23.3(supports-color@7.2.0)
       oxlint-tailwindcss:
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.13.0
+        version: 1.13.0
       react-doctor:
         specifier: ^0.9.14
         version: 0.9.14(@opentelemetry/core@2.11.0(@opentelemetry/api@1.9.1))(eslint@10.11.0(jiti@2.7.0)(supports-color@7.2.0))(oxlint-tsgolint@7.0.2001)(react@19.3.0)(supports-color@7.2.0)(vite-plus@0.3.3(@opentelemetry/api@1.9.1)(@types/node@26.6.2)(@vitest/coverage-v8@4.1.11)(jiti@2.7.0)(jsdom@30.1.1)(typescript@7.0.2)(yaml@2.9.1))
@@ -3194,8 +3194,8 @@ packages:
     resolution: {integrity: sha512-YGdwFmQXGQulT63SnVD9JI1hV2EwGnZHrgSlUMQaOkvnhYA200QwDeb7DfVT8UBt34lBvbkjtz8VRFJugHjsRQ==}
     engines: {node: ^20.19.0 || >=22.13.0}
 
-  oxlint-tailwindcss@1.12.0:
-    resolution: {integrity: sha512-dSeRi4mE+wHR7pdhF3G4A5ZBHgiLbyMORnyXLdbIi/JfwSjx65WxYddrpTuYDZzY8JqPaEYe+xTfj8v7b0xJhA==}
+  oxlint-tailwindcss@1.13.0:
+    resolution: {integrity: sha512-S6Dp9K1olUgPIAcQp3SQa+dZDJeZzoI9hE4Bp/fFYW43AMV0kPiDWpqm8JCXPHyHuMXvRWvdvS9J7KEQhTciBw==}
     engines: {node: '>=20'}
 
   oxlint-tsgolint@7.0.2001:
@@ -6217,7 +6217,7 @@ snapshots:
       lightningcss: 1.33.0
       oxc-parser: 0.148.0
 
-  oxlint-tailwindcss@1.12.0:
+  oxlint-tailwindcss@1.13.0:
     dependencies:
       '@tailwindcss/node': 4.3.3
       tailwindcss: 4.3.3
