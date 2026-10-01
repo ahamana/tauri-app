@@ -13,7 +13,7 @@ vi.mock("@tauri-apps/plugin-updater");
 function mockUpdate() {
   return {
     version: "1.2.3",
-    downloadAndInstall: vi.fn().mockResolvedValue(undefined),
+    downloadAndInstall: vi.fn<Update["downloadAndInstall"]>().mockResolvedValue(undefined),
   };
 }
 

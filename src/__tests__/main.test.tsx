@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom/client";
+import type { Root } from "react-dom/client";
 import { describe, expect, it, vi } from "vite-plus/test";
 
 import { checkUpdate } from "@/lib/updater";
@@ -6,7 +7,10 @@ import { checkUpdate } from "@/lib/updater";
 vi.mock("@/lib/updater");
 vi.mock("react-dom/client", () => ({
   default: {
-    createRoot: vi.fn(() => ({ render: vi.fn() })),
+    createRoot: vi.fn<typeof ReactDOM.createRoot>(() => ({
+      render: vi.fn<Root["render"]>(),
+      unmount: vi.fn<Root["unmount"]>(),
+    })),
   },
 }));
 

@@ -17,7 +17,7 @@ export default defineConfig({
       typeAware: true,
       typeCheck: true,
     },
-    plugins: ["import", "jsx-a11y", "oxc", "react", "typescript", "unicorn"],
+    plugins: ["import", "jsx-a11y", "oxc", "react", "typescript", "unicorn", "vitest"],
     jsPlugins: ["oxlint-tailwindcss"],
     settings: {
       tailwindcss: {
