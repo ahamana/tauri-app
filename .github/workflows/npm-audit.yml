@@ -33,7 +33,7 @@ jobs:
         run: npm install --legacy-peer-deps
 
       - name: Run npm audit
-        uses: oke-py/npm-audit-action@84cc08ae327eab4c4e959500f731ed3d7e37506b # v5.4.2
+        uses: oke-py/npm-audit-action@50eca3bcaabd0ac6311b59bdaa58bd0ba22f3da3 # v5.5.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dedupe_comments: true
