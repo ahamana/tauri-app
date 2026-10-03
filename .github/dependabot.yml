@@ -1,4 +1,12 @@
 version: 2
+
+multi-ecosystem-groups:
+  tauri:
+    schedule:
+      interval: daily
+      time: "09:00"
+      timezone: Asia/Tokyo
+
 updates:
   - package-ecosystem: github-actions
     directory: /
@@ -40,3 +48,20 @@ updates:
       timezone: Asia/Tokyo
     cooldown:
       default-days: 7
+
+  - package-ecosystem: npm
+    directory: /
+    cooldown:
+      default-days: 7
+    multi-ecosystem-group: tauri
+    patterns:
+      - "@tauri-apps/*"
+
+  - package-ecosystem: cargo
+    directory: /src-tauri
+    cooldown:
+      default-days: 7
+    multi-ecosystem-group: tauri
+    patterns:
+      - tauri
+      - tauri-*
