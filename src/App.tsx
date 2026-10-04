@@ -73,7 +73,12 @@ function App() {
         <label htmlFor="greet-input">Name</label>
         <input
           id="greet-input"
-          className="rounded-lg border border-transparent bg-white px-[1.2em] py-[0.6em] font-medium text-content shadow-control transition-colors duration-250 outline-none dark:bg-content/60 dark:text-white"
+          className={cn(
+            "rounded-lg border border-transparent px-[1.2em] py-[0.6em]",
+            "bg-white font-medium text-content shadow-control",
+            "transition-colors duration-250 outline-none",
+            "dark:bg-content/60 dark:text-white",
+          )}
           onChange={(e) => {
             nameRef.current = e.currentTarget.value;
           }}
@@ -81,7 +86,13 @@ function App() {
         />
         <button
           type="submit"
-          className="cursor-pointer rounded-lg border border-transparent bg-white px-[1.2em] py-[0.6em] font-medium text-content shadow-control transition-colors duration-250 outline-none hover:border-focus active:border-focus active:bg-pressed dark:bg-content/60 dark:text-white dark:active:bg-content/40"
+          className={cn(
+            "rounded-lg border border-transparent px-[1.2em] py-[0.6em]",
+            "bg-white font-medium text-content shadow-control",
+            "cursor-pointer transition-colors duration-250 outline-none",
+            "hover:border-focus active:border-focus active:bg-pressed",
+            "dark:bg-content/60 dark:text-white dark:active:bg-content/40",
+          )}
         >
           Greet
         </button>
