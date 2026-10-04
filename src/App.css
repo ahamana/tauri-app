@@ -6,12 +6,14 @@
   --color-content-dark: #f6f6f6;
   --color-content: #0f0f0f;
   --color-focus: #396cd8;
+  --color-pressed: #e8e8e8;
   --color-surface-dark: #2f2f2f;
   --color-surface: #f6f6f6;
   --drop-shadow-react: 0 0 2em #61dafb;
   --drop-shadow-tauri: 0 0 2em #24c8db;
   --drop-shadow-vite: 0 0 2em #747bff;
   --font-sans: Inter, Avenir, Helvetica, Arial, sans-serif;
+  --shadow-control: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 @layer base {
