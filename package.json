@@ -37,7 +37,7 @@
     "knip": "^6.38.0",
     "lefthook": "^2.1.14",
     "markdownlint-cli2": "^0.23.3",
-    "oxlint-tailwindcss": "^1.13.0",
+    "oxlint-tailwindcss": "^1.14.0",
     "react-doctor": "^0.9.14",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
