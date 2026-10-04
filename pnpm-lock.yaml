@@ -2211,8 +2211,8 @@ packages:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
     engines: {node: '>=8'}
 
-  ansi-regex@6.3.0:
-    resolution: {integrity: sha512-WpDfL7NO6j7tH88IDBNVdUJxDh9nmCteAVW9dsep846XdwF4naCBK+/tGLX3KJgcpgMRXCFlTM2hKGoK9FsdrQ==}
+  ansi-regex@6.4.0:
+    resolution: {integrity: sha512-KzTVk2tCWAHtYrvvvaP8bJKJq2pVinhLcGEQdtLIYPbmNGNyYe8QwNaTUYQp2J7/vIsUKt5QCqAfUkYyG9DkOw==}
     engines: {node: '>=12'}
 
   ansi-styles@5.2.0:
@@ -3506,11 +3506,11 @@ packages:
     resolution: {integrity: sha512-yau8yJdTt989Mm0Bd/236QnzEiPf2xLLTqUZRUJOo/3CB078LSwzei343DgtJVmfJKJE3TMINY1u42SQsP6mXw==}
     engines: {node: '>=14.0.0'}
 
-  tldts-core@7.4.15:
-    resolution: {integrity: sha512-ERuv0p98XgSzmlSLJr8vDNxX+uATGInlN97V3R+JpYWaSqn5IG3ewWgCwczk4bkOpgth/o8Nt5FOi4B4w0n/1A==}
+  tldts-core@7.4.16:
+    resolution: {integrity: sha512-MDolfaSJtlSK5Y0A1xl3277ekubZwobpBjugknDizI9O5Rm60a1m8k4ICK+MRsCDzPygT81mp3BBf5RKDlFRfA==}
 
-  tldts@7.4.15:
-    resolution: {integrity: sha512-SJVBeHOxDbNoq14CvpAoA2mLEWdbldGK8nR+yumpjY5nrlZxOflcA7p1Qj1gbTGmbu9DY9qLj/bENSWhBzjxRQ==}
+  tldts@7.4.16:
+    resolution: {integrity: sha512-QwBER5KMR86IIjpIiO7H/Z3IMJPsZ1A6RKPAqzTTgOyUQUSt9FdnKcqhTaJmkY6HVrgouZHZR0ncK5QxvmnQeg==}
     hasBin: true
 
   to-regex-range@5.0.1:
@@ -5137,7 +5137,7 @@ snapshots:
 
   ansi-regex@5.0.1: {}
 
-  ansi-regex@6.3.0: {}
+  ansi-regex@6.4.0: {}
 
   ansi-styles@5.2.0: {}
 
@@ -6508,7 +6508,7 @@ snapshots:
 
   strip-ansi@7.2.0:
     dependencies:
-      ansi-regex: 6.3.0
+      ansi-regex: 6.4.0
 
   strip-indent@3.0.0:
     dependencies:
@@ -6545,11 +6545,11 @@ snapshots:
 
   tinyrainbow@3.1.1: {}
 
-  tldts-core@7.4.15: {}
+  tldts-core@7.4.16: {}
 
-  tldts@7.4.15:
+  tldts@7.4.16:
     dependencies:
-      tldts-core: 7.4.15
+      tldts-core: 7.4.16
 
   to-regex-range@5.0.1:
     dependencies:
@@ -6559,7 +6559,7 @@ snapshots:
 
   tough-cookie@6.0.2:
     dependencies:
-      tldts: 7.4.15
+      tldts: 7.4.16
 
   tr46@6.0.0:
     dependencies:
