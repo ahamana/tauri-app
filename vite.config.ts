@@ -68,10 +68,6 @@ export default defineConfig({
     },
     environment: "jsdom",
     mockReset: true,
-    // Vitest 4 has no default file output, so the CI report path is set explicitly
-    outputFile: {
-      junit: ".vitest/junit/output.xml",
-    },
     setupFiles: ["./src/__tests__/vitest.setup.ts"],
   },
 
