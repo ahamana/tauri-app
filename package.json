@@ -35,7 +35,7 @@
     "@vitest/coverage-v8": "^5.0.1",
     "jsdom": "^30.1.1",
     "knip": "^6.39.0",
-    "lefthook": "^2.1.14",
+    "lefthook": "^2.1.16",
     "markdownlint-cli2": "^0.23.3",
     "oxlint-tailwindcss": "^1.14.0",
     "react-doctor": "^0.9.14",
