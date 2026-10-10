@@ -38,7 +38,7 @@
     "lefthook": "^2.1.16",
     "markdownlint-cli2": "^0.23.3",
     "oxlint-tailwindcss": "^1.14.0",
-    "react-doctor": "^0.9.14",
+    "react-doctor": "^0.9.17",
     "tailwindcss": "^4.3.3",
     "typescript": "^7.0.2",
     "vite": "npm:@voidzero-dev/vite-plus-core@^1.0.0",
