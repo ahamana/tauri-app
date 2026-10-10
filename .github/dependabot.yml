@@ -14,8 +14,6 @@ updates:
       interval: daily
       time: "09:00"
       timezone: Asia/Tokyo
-    cooldown:
-      default-days: 7
 
   - package-ecosystem: npm
     directory: /
@@ -23,8 +21,6 @@ updates:
       interval: daily
       time: "09:00"
       timezone: Asia/Tokyo
-    cooldown:
-      default-days: 7
     groups:
       commitlint:
         patterns:
@@ -46,21 +42,15 @@ updates:
       interval: daily
       time: "09:00"
       timezone: Asia/Tokyo
-    cooldown:
-      default-days: 7
 
   - package-ecosystem: npm
     directory: /
-    cooldown:
-      default-days: 7
     multi-ecosystem-group: tauri
     patterns:
       - "@tauri-apps/*"
 
   - package-ecosystem: cargo
     directory: /src-tauri
-    cooldown:
-      default-days: 7
     multi-ecosystem-group: tauri
     patterns:
       - tauri
