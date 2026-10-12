@@ -1,5 +1,6 @@
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
+import oxlintTailwindcss from "oxlint-tailwindcss/config";
 import { defineConfig } from "vite-plus";
 
 const host = process.env.TAURI_DEV_HOST;
@@ -18,7 +19,7 @@ export default defineConfig({
       typeCheck: true,
     },
     plugins: ["import", "jsx-a11y", "oxc", "react", "typescript", "unicorn", "vitest"],
-    jsPlugins: ["oxlint-tailwindcss"],
+    extends: [oxlintTailwindcss()],
     settings: {
       tailwindcss: {
         entryPoint: "src/App.css",
@@ -26,23 +27,16 @@ export default defineConfig({
     },
     rules: {
       "import/consistent-type-specifier-style": "warn",
-      // tailwindcss/*: the recommended set, except for enforce-sort-order and
-      // no-unnecessary-whitespace, which are left to fmt.sortTailwindcss
-      "tailwindcss/consistent-variant-order": "warn",
-      "tailwindcss/enforce-canonical": "warn",
-      "tailwindcss/enforce-consistent-important-position": "warn",
-      "tailwindcss/enforce-consistent-variable-syntax": "warn",
-      "tailwindcss/enforce-negative-arbitrary-values": "warn",
-      "tailwindcss/enforce-shorthand": "warn",
-      "tailwindcss/no-conflicting-classes": "error",
-      "tailwindcss/no-contradicting-variants": "warn",
-      "tailwindcss/no-dark-without-light": "warn",
-      "tailwindcss/no-deprecated-classes": "error",
-      "tailwindcss/no-duplicate-classes": "warn",
-      "tailwindcss/no-dynamic-classes": "error",
-      "tailwindcss/no-hardcoded-colors": "warn",
-      "tailwindcss/no-unknown-classes": "error",
-      "tailwindcss/no-unnecessary-arbitrary-value": "warn",
+      // Beyond the recommended set, because fmt cannot wrap class strings
+      "tailwindcss/enforce-consistent-line-wrapping": [
+        "warn",
+        {
+          wrapLines: "all",
+          wrapStrings: "jsx",
+        },
+      ],
+      // Left to fmt.sortTailwindcss
+      "tailwindcss/enforce-sort-order": "off",
       "typescript/consistent-type-imports": "warn",
     },
   },
@@ -55,6 +49,9 @@ export default defineConfig({
     },
     sortTailwindcss: {
       functions: ["cn"],
+      // Keeps the line breaks from tailwindcss/enforce-consistent-line-wrapping;
+      // the other whitespace is left to tailwindcss/no-unnecessary-whitespace
+      preserveWhitespace: true,
       stylesheet: "src/App.css",
     },
     ignorePatterns: ["*.toml", "pnpm-lock.yaml"],
