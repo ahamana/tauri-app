@@ -3,6 +3,8 @@ import { cn } from "cn";
 import { useRef, useState } from "react";
 
 import reactLogo from "@/assets/react.svg";
+import tauriLogo from "@/assets/tauri.svg";
+import viteLogo from "@/assets/vite.svg";
 
 import "@/App.css";
 
@@ -44,13 +46,13 @@ function App() {
       <div className="flex items-center justify-center">
         <Logo
           href="https://vitejs.dev"
-          src="/vite.svg"
+          src={viteLogo}
           className="hover:drop-shadow-vite"
           alt="Vite logo"
         />
         <Logo
           href="https://tauri.app"
-          src="/tauri.svg"
+          src={tauriLogo}
           className="hover:drop-shadow-tauri"
           alt="Tauri logo"
         />
