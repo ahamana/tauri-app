@@ -27,12 +27,11 @@ export default defineConfig({
     },
     rules: {
       "import/consistent-type-specifier-style": "warn",
-      // Beyond the recommended set, because fmt cannot wrap class strings
       "tailwindcss/enforce-consistent-line-wrapping": [
         "warn",
         {
           wrapLines: "all",
-          wrapStrings: "jsx",
+          wrapStrings: "all",
         },
       ],
       // Left to fmt.sortTailwindcss
