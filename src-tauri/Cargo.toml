@@ -16,16 +16,16 @@ name = "tauri_app_lib"
 [dependencies]
 log = "0.4.34"
 serde = { version = "1.0.229", features = ["derive"] }
-serde_json = "1.0.151"
-tauri = { version = "2.12.1", features = [] }
+serde_json = "1.0.154"
+tauri = { version = "2.12.3", features = [] }
 tauri-plugin = "2.7.1"
-tauri-plugin-dialog = "2.8.1"
-tauri-plugin-log = "2.10.0"
-tauri-plugin-opener = "2.7.0"
+tauri-plugin-dialog = "2.8.2"
+tauri-plugin-log = "2.10.1"
+tauri-plugin-opener = "2.7.1"
 
 [build-dependencies]
-tauri-build = { version = "2.7.1", features = [] }
+tauri-build = { version = "2.7.2", features = [] }
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 tauri-plugin-process = "2.4.0"
-tauri-plugin-updater = "2.13.1"
+tauri-plugin-updater = "2.13.3"
