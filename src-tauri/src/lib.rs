@@ -1,5 +1,4 @@
-use log::LevelFilter;
-use tauri_plugin_log::{Target, TargetKind, TimezoneStrategy};
+use tauri_plugin_log::{Target, TargetKind, TimezoneStrategy, log::LevelFilter};
 
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
 pub mod command;
