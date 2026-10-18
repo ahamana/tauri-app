@@ -1,5 +1,5 @@
 version: 2
-
+# test
 multi-ecosystem-groups:
   tauri:
     schedule:
