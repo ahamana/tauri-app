@@ -78,6 +78,7 @@ jobs:
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
           files: ${{ env.WINDOWS_PORTABLE_ASSET }}
+          fail_on_unmatched_files: true
           repository: ${{ github.repository_owner }}/tauri-app-release
           token: ${{ secrets.DEPLOY_TOKEN }}
 
