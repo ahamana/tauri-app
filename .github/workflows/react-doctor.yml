@@ -21,6 +21,8 @@ on:
       - reopened
       - synchronize
 
+permissions: {}
+
 # Cancels any in-flight scan for the same PR (or branch, on push) the moment a
 # new commit arrives, so reviewers only ever see the latest run.
 concurrency:

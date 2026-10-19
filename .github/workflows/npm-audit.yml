@@ -6,6 +6,8 @@ on:
     - cron: "0 9 * * 1-5"
       timezone: Asia/Tokyo
 
+permissions: {}
+
 jobs:
   scan:
     name: npm audit
