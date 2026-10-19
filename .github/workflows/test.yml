@@ -39,7 +39,7 @@ jobs:
           --reporter=junit
 
       - name: Publish test report
-        if: always()
+        if: ${{ always() }}
         uses: ctrf-io/github-test-reporter@dbb08957b5b2af918b39136ab2c5532002c7649b # v1.3.2
         with:
           report-path: .vitest/junit/output.xml
@@ -69,7 +69,7 @@ jobs:
       - *checkout
 
       - name: Install Linux dependencies
-        if: runner.os == 'Linux'
+        if: ${{ runner.os == 'Linux' }}
         shell: bash
         run: |
           sudo apt-get update
@@ -106,7 +106,7 @@ jobs:
         run: cargo nextest run --profile ci
 
       - name: Publish test report
-        if: always()
+        if: ${{ always() }}
         uses: ctrf-io/github-test-reporter@dbb08957b5b2af918b39136ab2c5532002c7649b # v1.3.2
         with:
           report-path: src-tauri/target/nextest/ci/junit.xml

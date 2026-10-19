@@ -58,7 +58,7 @@ jobs:
           releaseCommitish: main
 
       - name: Create Windows portable asset
-        if: runner.os == 'Windows'
+        if: ${{ runner.os == 'Windows' }}
         shell: pwsh
         env:
           ARTIFACT_PATHS: ${{ steps.build.outputs.artifactPaths }}
@@ -73,7 +73,7 @@ jobs:
           }
 
       - name: Release Windows portable asset # zizmor: ignore[superfluous-actions]
-        if: runner.os == 'Windows'
+        if: ${{ runner.os == 'Windows' }}
         uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
         with:
           tag_name: v${{ steps.build.outputs.appVersion }}
