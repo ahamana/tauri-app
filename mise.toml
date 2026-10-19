@@ -9,10 +9,10 @@ zshrc = true
 vite-plus = "https://github.com/markmals/mise-vite-plus"
 
 [tools]
-actionlint = "latest"
 claude = "latest"
 ghalint = "latest"
 github-cli = "latest"
+jactionlint = "latest"
 jq = "latest"
 rust = { version = "latest", components = "clippy" }
 shellcheck = "latest"
