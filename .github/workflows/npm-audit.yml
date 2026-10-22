@@ -36,7 +36,7 @@ jobs:
         # Vite+ ships Vite as `@voidzero-dev/vite-plus-core`, whose version does not
         # satisfy the `vite` peer range of plugins such as `@vitejs/plugin-react`.
         # pnpm covers this with `peerDependencyRules` in pnpm-workspace.yaml.
-        run: >-
+        run: >- # jactionlint ignore=unlocked-install
           npm install
           --ignore-scripts
           --legacy-peer-deps
