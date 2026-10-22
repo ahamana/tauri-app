@@ -36,7 +36,11 @@ jobs:
         # Vite+ ships Vite as `@voidzero-dev/vite-plus-core`, whose version does not
         # satisfy the `vite` peer range of plugins such as `@vitejs/plugin-react`.
         # pnpm covers this with `peerDependencyRules` in pnpm-workspace.yaml.
-        run: npm install --legacy-peer-deps
+        run: >-
+          npm install
+          --ignore-scripts
+          --legacy-peer-deps
+          --min-release-age=3
 
       - name: Run npm audit
         uses: oke-py/npm-audit-action@de66451a79cd895f0b2bfff49b47e05828b4b94d # v5.5.1
