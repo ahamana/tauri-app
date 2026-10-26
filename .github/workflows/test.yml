@@ -35,7 +35,7 @@ jobs:
       - name: Run tests
         shell: bash
         run: >-
-          vpr test
+          vp test
           --coverage
           --reporter=default
           --reporter=junit

@@ -4,7 +4,7 @@
   "version": "0.1.4",
   "identifier": "com.tauri-app.app",
   "build": {
-    "beforeDevCommand": "vpr dev",
+    "beforeDevCommand": "vp dev",
     "devUrl": "http://localhost:1420",
     "beforeBuildCommand": "vpr build",
     "frontendDist": "../dist"

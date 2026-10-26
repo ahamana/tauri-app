@@ -5,10 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vp build",
-    "dev": "vp dev",
-    "preview": "vp preview",
-    "tauri": "tauri",
-    "test": "vp test"
+    "tauri": "tauri"
   },
   "dependencies": {
     "@tauri-apps/api": "^2.12.4",
