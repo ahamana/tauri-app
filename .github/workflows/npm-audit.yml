@@ -43,7 +43,7 @@ jobs:
           --min-release-age=3
 
       - name: Run npm audit
-        uses: oke-py/npm-audit-action@de66451a79cd895f0b2bfff49b47e05828b4b94d # v5.5.1
+        uses: oke-py/npm-audit-action@da53d502b06a0bc95f9ce3c0ebab0c4c713fae4a # v5.5.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dedupe_comments: true
