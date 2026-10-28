@@ -53,7 +53,7 @@ export default defineConfig({
       preserveWhitespace: true,
       stylesheet: "src/App.css",
     },
-    ignorePatterns: ["*.toml", "pnpm-lock.yaml"],
+    ignorePatterns: ["*.toml"],
   },
 
   // Vitest configuration
