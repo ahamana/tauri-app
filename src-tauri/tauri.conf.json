@@ -6,7 +6,7 @@
   "build": {
     "beforeDevCommand": "vp dev",
     "devUrl": "http://localhost:1420",
-    "beforeBuildCommand": "vpr build",
+    "beforeBuildCommand": "vp check --no-fmt && vp build",
     "frontendDist": "../dist"
   },
   "app": {

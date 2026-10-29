@@ -4,7 +4,6 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc && vp build",
     "tauri": "tauri"
   },
   "dependencies": {
