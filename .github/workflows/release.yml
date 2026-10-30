@@ -48,17 +48,13 @@ jobs:
         id: build
         uses: tauri-apps/tauri-action@1deb371b0cd8bd54025b384f1cd735e725c4060f # v1.0.0
         env:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ github.workspace }}/.tauri/updater.key
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY_PASSWORD }}
         with:
           tagName: v__VERSION__
           releaseName: v__VERSION__
           releaseBody: v__VERSION__ release
-          releaseDraft: true
-          owner: ${{ github.repository_owner }}
-          repo: tauri-app-release
-          releaseCommitish: main
 
       - name: Create Windows portable asset
         if: ${{ runner.os == 'Windows' }}
@@ -82,11 +78,3 @@ jobs:
           tag_name: v${{ steps.build.outputs.appVersion }}
           files: ${{ env.WINDOWS_PORTABLE_ASSET }}
           fail_on_unmatched_files: true
-          repository: ${{ github.repository_owner }}/tauri-app-release
-          token: ${{ secrets.DEPLOY_TOKEN }}
-
-      - name: Create tag # zizmor: ignore[superfluous-actions]
-        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
-        with:
-          tag_name: v${{ steps.build.outputs.appVersion }}
-          body: v${{ steps.build.outputs.appVersion }} release
