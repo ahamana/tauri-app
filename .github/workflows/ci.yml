@@ -1,0 +1,26 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    name: Lint
+    permissions:
+      contents: read
+    uses: $/.github/workflows/lint.yml
+
+  test:
+    name: Test
+    permissions:
+      contents: read
+    uses: $/.github/workflows/test.yml
