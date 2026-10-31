@@ -43,13 +43,13 @@ updates:
       time: "09:00"
       timezone: Asia/Tokyo
 
-  - package-ecosystem: npm # jactionlint ignore=dependabot-syntax
+  - package-ecosystem: npm
     directory: /
     multi-ecosystem-group: tauri
     patterns:
       - "@tauri-apps/*"
 
-  - package-ecosystem: cargo # jactionlint ignore=dependabot-syntax
+  - package-ecosystem: cargo
     directory: /src-tauri
     multi-ecosystem-group: tauri
     patterns:
