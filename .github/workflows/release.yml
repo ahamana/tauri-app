@@ -45,7 +45,6 @@ jobs:
               cache: false
 
       - name: Build and release application
-        id: build
         uses: tauri-apps/tauri-action@1deb371b0cd8bd54025b384f1cd735e725c4060f # v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -55,26 +54,3 @@ jobs:
           tagName: v__VERSION__
           releaseName: v__VERSION__
           releaseBody: v__VERSION__ release
-
-      - name: Create Windows portable asset
-        if: &windows ${{ runner.os == 'Windows' }}
-        shell: pwsh
-        env:
-          ARTIFACT_PATHS: ${{ steps.build.outputs.artifactPaths }}
-        working-directory: src-tauri/target/release
-        run: |
-          ConvertFrom-Json $env:ARTIFACT_PATHS | ForEach-Object {
-              if ((Split-Path $_ -Leaf) -match '(.+)-setup\.exe$') {
-                  $asset = Join-Path $PWD "$($Matches[1]).zip"
-                  Compress-Archive *.exe,third-party $asset
-                  Write-Output "WINDOWS_PORTABLE_ASSET=$asset" >> $env:GITHUB_ENV
-              }
-          }
-
-      - name: Release Windows portable asset # zizmor: ignore[superfluous-actions]
-        if: *windows
-        uses: softprops/action-gh-release@efb35369e0ad2afab669f228072c1b0d510eae64 # v3.0.3
-        with:
-          tag_name: v${{ steps.build.outputs.appVersion }}
-          files: ${{ env.WINDOWS_PORTABLE_ASSET }}
-          fail_on_unmatched_files: true
