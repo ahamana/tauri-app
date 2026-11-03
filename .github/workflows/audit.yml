@@ -59,6 +59,8 @@ jobs:
       checks: write
       contents: read
       issues: write
+    env:
+      CARGO_TERM_COLOR: always
 
     steps:
       - *checkout
