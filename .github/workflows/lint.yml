@@ -16,12 +16,12 @@ jobs:
     steps:
       - &checkout
         name: Checkout repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Set up Vite+ and install dependencies
-        uses: voidzero-dev/setup-vp@cab1ab9eaff52d4857875f4f2c016e36af8f2c76 # v1.22.0
+        uses: voidzero-dev/setup-vp@v1.22.0
         with:
           cache: true
 
@@ -50,18 +50,18 @@ jobs:
             libwebkit2gtk-4.1-dev
 
       - name: Set up Rust
-        uses: jdx/mise-action@6612f0ef07ed2a736cd1e00a94a065522dd41195 # v5.2.5
+        uses: jdx/mise-action@v5.2.5
         with:
           install_args: rust
           add_shims_to_path: false
 
       - name: Configure Rust cache
-        uses: Swatinem/rust-cache@d1527c8f67ef9af357290475d4af4b0fab8f12e0 # v2.9.3
+        uses: Swatinem/rust-cache@v2.9.3
         with:
           workspaces: src-tauri
 
       - name: Run Clippy
-        uses: auguwu/clippy-action@9817d076b82df0194935be9db6154c56ac07b317 # 1.5.0
+        uses: auguwu/clippy-action@1.5.0
         with:
           token: ${{ github.token }}
           working-directory: src-tauri
@@ -78,4 +78,4 @@ jobs:
       - *checkout
 
       - name: Run markdownlint
-        uses: DavidAnson/markdownlint-cli2-action@696eb3f2509270d7b882d2aa68347bc676e7af34 # v25.0.0
+        uses: DavidAnson/markdownlint-cli2-action@v25.0.0

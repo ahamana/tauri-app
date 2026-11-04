@@ -23,12 +23,12 @@ jobs:
     steps:
       - &checkout
         name: Checkout repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - name: Set up Node.js
-        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        uses: actions/setup-node@v7.1.0
         with:
           node-version-file: .node-version
 
@@ -44,7 +44,7 @@ jobs:
           --min-release-age=3
 
       - name: Run npm audit
-        uses: oke-py/npm-audit-action@da53d502b06a0bc95f9ce3c0ebab0c4c713fae4a # v5.5.2
+        uses: oke-py/npm-audit-action@v5.5.2
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           dedupe_comments: true
@@ -66,7 +66,7 @@ jobs:
       - *checkout
 
       - name: Run cargo audit
-        uses: rustsec/audit-check@69366f33c96575abad1ee0dba8212993eecbe998 # v2.0.0
+        uses: rustsec/audit-check@v2.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           working-directory: src-tauri

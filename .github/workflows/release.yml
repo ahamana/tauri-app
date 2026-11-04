@@ -29,23 +29,23 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
       - parallel:
           - name: Set up Vite+ and install dependencies
-            uses: voidzero-dev/setup-vp@cab1ab9eaff52d4857875f4f2c016e36af8f2c76 # v1.22.0
+            uses: voidzero-dev/setup-vp@v1.22.0
 
           - name: Set up Rust
-            uses: jdx/mise-action@6612f0ef07ed2a736cd1e00a94a065522dd41195 # v5.2.5
+            uses: jdx/mise-action@v5.2.5
             with:
               install_args: rust
               add_shims_to_path: false
               cache: false
 
       - name: Build and release application
-        uses: tauri-apps/tauri-action@1deb371b0cd8bd54025b384f1cd735e725c4060f # v1.0.0
+        uses: tauri-apps/tauri-action@v1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAURI_SIGNING_PRIVATE_KEY: ${{ github.workspace }}/.tauri/updater.key
