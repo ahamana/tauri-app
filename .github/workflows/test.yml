@@ -72,7 +72,7 @@ jobs:
             libwebkit2gtk-4.1-dev
 
       - name: Set up Rust
-        uses: jdx/mise-action@v5.2.5
+        uses: jdx/mise-action@v5.2.6
         with:
           install_args: rust
           add_shims_to_path: false
