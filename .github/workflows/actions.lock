@@ -38,7 +38,7 @@ workflows:
         - 'ctrf-io/github-test-reporter@v1.3.2'
         - 'jdx/mise-action@v5.2.6'
         - 'swatinem/rust-cache@v2.9.3'
-        - 'taiki-e/install-action@v2.89.0'
+        - 'taiki-e/install-action@v2.89.1'
         - 'voidzero-dev/setup-vp@v1.22.0'
 dependencies:
     'actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9':
@@ -127,9 +127,9 @@ dependencies:
         commit: 'sha1-d1527c8f67ef9af357290475d4af4b0fab8f12e0'
         owner_id: 580492
         repo_id: 298565987
-    'taiki-e/install-action@v2.89.0':
-        ref: 'v2.89.0'
-        commit: 'sha1-1919c4a95903d2c33e4a221102edca87309fc14b'
+    'taiki-e/install-action@v2.89.1':
+        ref: 'v2.89.1'
+        commit: 'sha1-682ce6c3c696a4cd5168a05f98e51aa02b877941'
         owner_id: 43724913
         repo_id: 442947557
     'tauri-apps/tauri-action@v1.0.0':
