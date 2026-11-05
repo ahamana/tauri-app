@@ -11,8 +11,10 @@ workflows:
     '.github/workflows/audit.yml':
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-node@v7.1.0'
+        - 'jdx/mise-action@v5.2.6'
         - 'oke-py/npm-audit-action@v5.5.2'
         - 'rustsec/audit-check@v2.0.0'
+        - 'taiki-e/install-action@v2.89.1'
     '.github/workflows/auto-author-assign.yml':
         - 'toshimaru/auto-author-assign@v3.1.1'
     '.github/workflows/ci.yml': []
