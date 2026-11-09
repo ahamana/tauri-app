@@ -78,7 +78,7 @@ jobs:
           add_shims_to_path: false
 
       - name: Install Rust development tools
-        uses: taiki-e/install-action@v2.90.1
+        uses: taiki-e/install-action@v2.90.2
         with:
           tool: cargo-nextest
 
