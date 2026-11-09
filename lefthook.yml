@@ -55,7 +55,7 @@ pre-commit:
 
     - name: markdownlint
       glob: "*.md"
-      run: vpx markdownlint-cli2 --fix --no-globs {staged_files}
+      run: vp exec markdownlint-cli2 --fix --no-globs {staged_files}
       stage_fixed: true
 
     - name: tombi
@@ -70,4 +70,4 @@ pre-commit:
 commit-msg:
   jobs:
     - name: commitlint
-      run: vpx commitlint --edit {1}
+      run: vp exec commitlint --edit {1}
