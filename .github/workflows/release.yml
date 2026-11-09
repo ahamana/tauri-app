@@ -38,7 +38,7 @@ jobs:
             uses: voidzero-dev/setup-vp@v1.22.0
 
           - name: Set up Rust
-            uses: jdx/mise-action@v5.2.6
+            uses: jdx/mise-action@v5.2.7
             with:
               install_args: rust
               add_shims_to_path: false

@@ -6,12 +6,12 @@ workflows:
     '.github/workflows/actions-lint.yml':
         - 'actions/checkout@v7.0.1'
         - 'jdx/jactionlint@v2.5.0'
-        - 'jdx/mise-action@v5.2.6'
+        - 'jdx/mise-action@v5.2.7'
         - 'zizmorcore/zizmor-action@v0.8.1'
     '.github/workflows/audit.yml':
         - 'actions/checkout@v7.0.1'
         - 'actions/setup-node@v7.1.0'
-        - 'jdx/mise-action@v5.2.6'
+        - 'jdx/mise-action@v5.2.7'
         - 'oke-py/npm-audit-action@v5.5.2'
         - 'rustsec/audit-check@v2.0.0'
         - 'taiki-e/install-action@v2.90.1'
@@ -24,7 +24,7 @@ workflows:
         - 'actions/checkout@v7.0.1'
         - 'auguwu/clippy-action@1.5.0'
         - 'davidanson/markdownlint-cli2-action@v25.0.0'
-        - 'jdx/mise-action@v5.2.6'
+        - 'jdx/mise-action@v5.2.7'
         - 'swatinem/rust-cache@v2.9.3'
         - 'voidzero-dev/setup-vp@v1.22.0'
     '.github/workflows/react-doctor.yml':
@@ -32,13 +32,13 @@ workflows:
         - 'millionco/react-doctor@v2.4.0'
     '.github/workflows/release.yml':
         - 'actions/checkout@v7.0.1'
-        - 'jdx/mise-action@v5.2.6'
+        - 'jdx/mise-action@v5.2.7'
         - 'tauri-apps/tauri-action@v1.0.0'
         - 'voidzero-dev/setup-vp@v1.22.0'
     '.github/workflows/test.yml':
         - 'actions/checkout@v7.0.1'
         - 'ctrf-io/github-test-reporter@v1.3.2'
-        - 'jdx/mise-action@v5.2.6'
+        - 'jdx/mise-action@v5.2.7'
         - 'swatinem/rust-cache@v2.9.3'
         - 'taiki-e/install-action@v2.90.1'
         - 'voidzero-dev/setup-vp@v1.22.0'
@@ -100,9 +100,9 @@ dependencies:
         repo_id: 1404951382
         uses:
             - 'github/codeql-action@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2'
-    'jdx/mise-action@v5.2.6':
-        ref: 'v5.2.6'
-        commit: 'sha1-f5be966e4a917d54244728e6a5fdcd1d93a35e6c'
+    'jdx/mise-action@v5.2.7':
+        ref: 'v5.2.7'
+        commit: 'sha1-b44d12e7d0d8ee7461bb893e1b1993500433185b'
         owner_id: 216188
         repo_id: 738284564
     'millionco/react-doctor@v2.4.0':
