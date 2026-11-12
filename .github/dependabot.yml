@@ -3,23 +3,23 @@ version: 2
 multi-ecosystem-groups:
   tauri:
     schedule:
-      interval: daily
-      time: "09:00"
+      interval: cron
+      cronjob: 0 9 * * *
       timezone: Asia/Tokyo
 
 updates:
   - package-ecosystem: github-actions
     directory: /
     schedule:
-      interval: daily
-      time: "09:00"
+      interval: cron
+      cronjob: 0 9 * * *
       timezone: Asia/Tokyo
 
   - package-ecosystem: npm
     directory: /
     schedule:
-      interval: daily
-      time: "09:00"
+      interval: cron
+      cronjob: 0 9 * * *
       timezone: Asia/Tokyo
     groups:
       commitlint:
@@ -39,8 +39,8 @@ updates:
   - package-ecosystem: cargo
     directory: /src-tauri
     schedule:
-      interval: daily
-      time: "09:00"
+      interval: cron
+      cronjob: 0 9 * * *
       timezone: Asia/Tokyo
 
   - package-ecosystem: npm
