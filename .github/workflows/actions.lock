@@ -27,6 +27,9 @@ workflows:
         - 'jdx/mise-action@v5.2.7'
         - 'swatinem/rust-cache@v2.9.3'
         - 'voidzero-dev/setup-vp@v1.22.0'
+    '.github/workflows/lychee.yml':
+        - 'actions/checkout@v7.0.1'
+        - 'lycheeverse/lychee-action@v2.9.0'
     '.github/workflows/react-doctor.yml':
         - 'actions/checkout@v7.0.1'
         - 'millionco/react-doctor@v2.4.0'
@@ -105,6 +108,11 @@ dependencies:
         commit: 'sha1-b44d12e7d0d8ee7461bb893e1b1993500433185b'
         owner_id: 216188
         repo_id: 738284564
+    'lycheeverse/lychee-action@v2.9.0':
+        ref: 'v2.9.0'
+        commit: 'sha1-e7477775783ea5526144ba13e8db5eec57747ce8'
+        owner_id: 74027027
+        repo_id: 320929718
     'millionco/react-doctor@v2.4.0':
         ref: 'v2.4.0'
         commit: 'sha1-695e46eee203a5d1855020191aa7e9c010a1250e'
