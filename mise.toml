@@ -13,6 +13,7 @@ claude = "latest"
 ghalint = "latest"
 github-cli = { version = "latest", postinstall = "gh extension install github/gh-actions-lock --force" }
 jactionlint = "latest"
+lychee = "latest"
 rust = { version = "latest", components = "clippy" }
 shellcheck = "latest"
 tombi = "latest"
