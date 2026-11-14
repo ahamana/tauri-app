@@ -37,7 +37,7 @@
     "react-doctor": "^0.9.22",
     "tailwindcss": "^4.3.5",
     "typescript": "^7.0.2",
-    "vite": "npm:@voidzero-dev/vite-plus-core@^1.5.1",
+    "vite": "npm:@voidzero-dev/vite-plus-core@^1.6.0",
     "vite-plus": "^1.6.0"
   },
   "packageManager": "pnpm@12.21.0"
