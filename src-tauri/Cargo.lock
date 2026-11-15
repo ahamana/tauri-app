@@ -3941,7 +3941,6 @@ dependencies = [
  "serde_json",
  "tauri",
  "tauri-build",
- "tauri-plugin",
  "tauri-plugin-dialog",
  "tauri-plugin-log",
  "tauri-plugin-opener",

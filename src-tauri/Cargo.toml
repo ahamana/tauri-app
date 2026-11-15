@@ -17,7 +17,6 @@ name = "tauri_app_lib"
 serde = { version = "1.0.229", features = ["derive"] }
 serde_json = "1.0.154"
 tauri = { version = "2.12.5", features = [] }
-tauri-plugin = "2.7.2"
 tauri-plugin-dialog = "2.8.4"
 tauri-plugin-log = "2.10.2"
 tauri-plugin-opener = "2.7.3"
