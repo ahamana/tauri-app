@@ -5,7 +5,7 @@ version: 'v0.0.3'
 workflows:
     '.github/workflows/actions-lint.yml':
         - 'actions/checkout@v7.0.1'
-        - 'jdx/jactionlint@v2.5.0'
+        - 'jdx/jactionlint@v2.6.0'
         - 'jdx/mise-action@v5.2.8'
         - 'zizmorcore/zizmor-action@v0.8.1'
     '.github/workflows/audit.yml':
@@ -96,9 +96,9 @@ dependencies:
         commit: 'sha1-9b3254085494b55a0f7c4c2b3d2d52cc712ce370'
         owner_id: 9919
         repo_id: 259445878
-    'jdx/jactionlint@v2.5.0':
-        ref: 'v2.5.0'
-        commit: 'sha1-9e87e8f34edfc00b849a27807e26eff9d00b936d'
+    'jdx/jactionlint@v2.6.0':
+        ref: 'v2.6.0'
+        commit: 'sha1-72c00452809bcca05b8bc12acdcf15dd7a9c1c5e'
         owner_id: 216188
         repo_id: 1404951382
         uses:
