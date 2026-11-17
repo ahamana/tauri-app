@@ -1,5 +1,7 @@
 minimumReleaseAge: 4320
 trustPolicy: no-downgrade
+trustPolicyExclude:
+  - tsrs
 autoDedupe: true
 peerDependencyRules:
   allowAny:
