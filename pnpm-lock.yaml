@@ -249,8 +249,8 @@ importers:
         specifier: ^0.24.1
         version: 0.24.1
       oxlint-tailwindcss:
-        specifier: ^1.17.1
-        version: 1.17.1
+        specifier: ^1.17.2
+        version: 1.17.2
       react-doctor:
         specifier: ^0.9.23
         version: 0.9.23(@opentelemetry/core@2.12.1(@opentelemetry/api@1.9.1))(eslint@10.15.0(jiti@2.7.0))(oxlint-tsgolint@7.0.2006)(react@19.3.1)(vite-plus@1.6.0(@opentelemetry/api@1.9.1)(@types/node@26.6.6)(@vitest/coverage-v8@5.1.0)(@vitest/ui@5.1.0)(jiti@2.7.0)(jsdom@31.0.1)(typescript@7.0.2)(yaml@2.9.1))
@@ -3015,8 +3015,8 @@ packages:
     resolution: {integrity: sha512-AWC9/Jiki6s7e8b8xqTs0T/Hph8ISEDmoMUDwPkEzTrE0996ZWjwg7Ifaz5vPJQnefnOI9SDQQ/EvwvaZt4Tvg==}
     engines: {node: ^20.19.0 || >=22.13.0}
 
-  oxlint-tailwindcss@1.17.1:
-    resolution: {integrity: sha512-fIsTVO97ruLU7GK8mNfQiE0TsjcnOccVz/w+C/lvbo54Hb/0ZZvT4cw3a0TCxM/buREd09enI+h7zfm6cG8OzA==}
+  oxlint-tailwindcss@1.17.2:
+    resolution: {integrity: sha512-L19t/iFDQgEvwoje2H4eC1ClSe/Pr4V824eejb0FmQB14kixJ+0+Ed6diY2G/1qILHX6vXPHovf0XFvr1shTQQ==}
     engines: {node: ^20.19.0 || >=22.12.0}
 
   oxlint-tsgolint@7.0.2006:
@@ -5880,7 +5880,7 @@ snapshots:
       lightningcss: 1.33.0
       oxc-parser: 0.148.0
 
-  oxlint-tailwindcss@1.17.1:
+  oxlint-tailwindcss@1.17.2:
     dependencies:
       '@tailwindcss/node': 4.3.5
       tailwindcss: 4.3.5
