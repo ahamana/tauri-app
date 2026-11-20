@@ -3,8 +3,5 @@ trustPolicy: no-downgrade
 trustPolicyExclude:
   - tsrs
 autoDedupe: true
-peerDependencyRules:
-  allowAny:
-    - vite
 allowBuilds:
   lefthook: true
