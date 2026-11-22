@@ -65,7 +65,7 @@ jobs:
           add_shims_to_path: false
 
       - name: Install cargo-audit
-        uses: taiki-e/install-action@v2.90.5
+        uses: taiki-e/install-action@v2.90.6
         with:
           tool: cargo-audit
 
