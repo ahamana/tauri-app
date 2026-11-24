@@ -41,7 +41,7 @@ jobs:
       - name: Run npm audit
         uses: oke-py/npm-audit-action@v5.5.2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ github.token }}
           dedupe_comments: true
           dedupe_issues: true
           report_format: markdown
@@ -72,5 +72,5 @@ jobs:
       - name: Run cargo audit
         uses: rustsec/audit-check@v2.0.0
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ github.token }}
           working-directory: src-tauri
