@@ -11,7 +11,7 @@ vite-plus = "https://github.com/markmals/mise-vite-plus"
 [tools]
 claude = "latest"
 ghalint = "latest"
-github-cli = { version = "latest", postinstall = "gh extension install github/gh-actions-lock --force" }
+github-cli = { version = "latest", postinstall = { run = "gh extension install github/gh-actions-lock --force", when = "always" } }
 jactionlint = "latest"
 lychee = "latest"
 rust = { version = "latest", components = "clippy" }
