@@ -23,7 +23,7 @@ workflows:
     '.github/workflows/lint.yml':
         - 'actions/checkout@v7.0.1'
         - 'auguwu/clippy-action@1.5.0'
-        - 'davidanson/markdownlint-cli2-action@v25.0.0'
+        - 'davidanson/markdownlint-cli2-action@v25.1.0'
         - 'jdx/mise-action@v5.2.10'
         - 'swatinem/rust-cache@v2.9.3'
         - 'voidzero-dev/setup-vp@v1.22.0'
@@ -81,9 +81,9 @@ dependencies:
         commit: 'sha1-c2e2997afb89a9a515d83121ce7499e272630446'
         owner_id: 158504486
         repo_id: 788637527
-    'davidanson/markdownlint-cli2-action@v25.0.0':
-        ref: 'v25.0.0'
-        commit: 'sha1-696eb3f2509270d7b882d2aa68347bc676e7af34'
+    'davidanson/markdownlint-cli2-action@v25.1.0':
+        ref: 'v25.1.0'
+        commit: 'sha1-3ce8f712b5d8f31acd8e201be6d97e3d2bb23eb7'
         owner_id: 1828270
         repo_id: 329203602
     'github/codeql-action@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2':
