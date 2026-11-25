@@ -78,4 +78,4 @@ jobs:
       - *checkout
 
       - name: Run markdownlint
-        uses: DavidAnson/markdownlint-cli2-action@v25.0.0
+        uses: DavidAnson/markdownlint-cli2-action@v25.1.0
