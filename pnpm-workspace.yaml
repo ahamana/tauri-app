@@ -2,6 +2,5 @@ minimumReleaseAge: 4320
 trustPolicy: no-downgrade
 trustPolicyExclude:
   - tsrs
-autoDedupe: true
 allowBuilds:
   lefthook: true
