@@ -82,7 +82,7 @@ jobs:
         with:
           tool: cargo-nextest
 
-      - name: Configure Rust cache
+      - name: Cache Rust dependencies
         uses: Swatinem/rust-cache@v2.9.3
         with:
           workspaces: src-tauri

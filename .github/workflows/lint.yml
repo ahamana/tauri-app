@@ -55,7 +55,7 @@ jobs:
           install_args: rust
           add_shims_to_path: false
 
-      - name: Configure Rust cache
+      - name: Cache Rust dependencies
         uses: Swatinem/rust-cache@v2.9.3
         with:
           workspaces: src-tauri
